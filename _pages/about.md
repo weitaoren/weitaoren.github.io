@@ -29,14 +29,39 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 
 ## Industry Internships
 
-- **Tencent Research Institute (Beijing)** — Economic & Financial Research Intern, Aug 2025–Oct 2025  
-  Studied platform governance and incentive design in social e-commerce using network analysis and simulation-based evaluation.
+<table style="width:100%; border-collapse:collapse;">
+<tr>
+<td><strong>Tencent Research Institute (Beijing)</strong><br>
+Economic & Financial Research Intern</td>
+<td style="text-align:right; white-space:nowrap;">Aug 2025 – Oct 2025</td>
+</tr>
+</table>
 
-- **ByteDance (International E-commerce Division)** — Business Analytics Intern, Jun 2025–Jul 2025  
-  Designed merchant evaluation metrics and conducted data-driven analysis to support international marketplace operations.
+Studied platform governance and incentive design in social e-commerce using network analysis and simulation-based evaluation.
 
-- **Ant Group Research Institute (Shanghai)** — Data & Modeling Intern, Apr 2024–Jun 2024  
-  Conducted large-scale survey data modeling and developed macro-level indicators for digital economy research.
+<br>
+
+<table style="width:100%; border-collapse:collapse;">
+<tr>
+<td><strong>ByteDance (International E-commerce Division)</strong><br>
+Business Analytics Intern</td>
+<td style="text-align:right; white-space:nowrap;">Jun 2025 – Jul 2025</td>
+</tr>
+</table>
+
+Designed merchant evaluation metrics and conducted data-driven analysis to support international marketplace operations.
+
+<br>
+
+<table style="width:100%; border-collapse:collapse;">
+<tr>
+<td><strong>Ant Group Research Institute (Shanghai)</strong><br>
+Data & Modeling Intern</td>
+<td style="text-align:right; white-space:nowrap;">Apr 2024 – Jun 2024</td>
+</tr>
+</table>
+
+Conducted large-scale survey data modeling and developed macro-level indicators for digital economy research.
 
 ---
 
