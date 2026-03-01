@@ -23,3 +23,8 @@ author_profile: true
 
 - *Joint Advertising and Participation Decisions in Cross-Store Promotions*, with Fangruo Chen & Yao Chen
 - *Optimal Price Guarantee Strategy under Consumer Anticipated Regret*, with Fangruo Chen & Chengjie Li
+
+## Conference and Talk
+
+- *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
+  The 17th International Annual Conference of Chinese Scholars in Management Science and Engineering (CSAMSE), Chengdu, China, Jul 26–27, 2025.
