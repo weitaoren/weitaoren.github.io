@@ -22,15 +22,15 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 
 ## Education
 
-- **Shanghai Jiao Tong University** (2021–2026)
+- **Shanghai Jiao Tong University** (2021–2026)  
   Antai College of Economics and Management  
   Ph.D., Management Science and Engineering (Operations Management) 
    
-- **Rutgers, The State University of New Jersey** (2024–2025)
+- **Rutgers, The State University of New Jersey** (2024–2025)  
   Rutgers Business School  
   Visiting Ph.D., Supply Chain Management 
 
-- **Huazhong University of Science and Technology** (2017–2021)
+- **Huazhong University of Science and Technology** (2017–2021)  
   School of Management  
   B.S., Information Management and Information Systems  
 
