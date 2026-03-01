@@ -12,7 +12,7 @@ I am a Ph.D. candidate in **Management Science and Engineering (Operations Manag
 
 My research lies at the **Operations–Marketing interface**, with a focus on **return policy design**, **consumer information search**, and **mechanism design** in **online retailing**. I develop analytical models to examine how firms and platforms design pricing, return, and insurance mechanisms under consumer heterogeneity and product fit uncertainty.
 
-**Three papers are currently under revision at _Production and Operations Management_ (UTD-24/FT50).**
+**Three papers are currently under review at _Production and Operations Management_ (UTD-24/FT50).**
 
 ---
 
