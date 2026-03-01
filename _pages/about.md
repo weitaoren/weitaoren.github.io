@@ -18,7 +18,7 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 
 ## Research Interests
 - Operations–Marketing Interface  
-- E-commerce Operations (Pricing and Return Policy Design)  
+- E-commerce Operations
 - Supply Chain Management  
 - Network Economics  
 
