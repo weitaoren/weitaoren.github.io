@@ -19,10 +19,10 @@ repository               : "weitaoren/weitaoren.github.io"
 
 # Site Author (sidebar)
 author:
-  avatar           : "profile.jpg"  # put profile.png in /images/ (or adjust path per your template)
+  avatar           : "profile.png"  # put profile.png in /images/ (or adjust path per your template)
   name             : "Weitao Ren (任伟涛)"
   pronouns         :
-  bio              : "Ph.D. Candidate at Shanghai Jiao Tong University. Research on return policy design, consumer search, and mechanism design in digital marketplaces."
+  bio              : "Ph.D. Candidate at Shanghai Jiao Tong University."
   location         : "Shanghai, China"
   employer         : "Shanghai Jiao Tong University"
   uri              :
