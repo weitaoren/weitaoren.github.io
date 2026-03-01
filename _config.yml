@@ -10,7 +10,7 @@
 locale                   : "en-US"
 site_theme               : "default" # options: "default", "air", "sunrise", "mint", "dirt", "contrast"
 dark_mode                : false
-title                    : "Weitao Ren (任伟涛)"
+title                    : "Weitao Ren"
 title_separator          : "-"
 name                     : &name "Weitao Ren"
 description              : &description "Weitao Ren | Operations–Marketing Interface | Online Retailing | Return Policy Design"
