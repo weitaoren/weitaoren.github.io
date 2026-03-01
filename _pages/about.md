@@ -23,7 +23,6 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 ## Education
 
 - **Shanghai Jiao Tong University** (2021–2026)
-  
   Antai College of Economics and Management  
   Ph.D., Management Science and Engineering (Operations Management) 
    
