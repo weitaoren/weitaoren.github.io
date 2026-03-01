@@ -36,13 +36,10 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 ## Industry Internships
 
 - **Tencent Research Institute** — Research Intern, Aug 2025–Oct 2025  
-  Studied platform governance and incentive design in social e-commerce using network analysis and simulation-based evaluation.
 
 - **ByteDance** — Business Analytics Intern, Jun 2025–Jul 2025  
-  Designed merchant evaluation metrics and conducted data-driven analysis to support international marketplace operations.
 
 - **Ant Group Research Institute** — Data & Modeling Intern, Apr 2024–Jun 2024  
-  Conducted large-scale survey data modeling and developed macro-level indicators for digital economy research.
 
 ---
 
