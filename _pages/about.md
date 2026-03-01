@@ -2,26 +2,42 @@
 permalink: /
 title: "About"
 author_profile: true
+classes: wide
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-I am a Ph.D. candidate in **Management Science and Engineering (Operations Management)** at **Shanghai Jiao Tong University, Antai College of Economics and Management**, advised by **Prof. Fangruo Chen** (Dean and Guangqi Chair Professor).
+I am a Ph.D. candidate in **Management Science and Engineering (Operations Management)** at **Shanghai Jiao Tong University, Antai College of Economics and Management**, advised by **Prof. Fangruo Chen**, Dean and Guangqi Chair Professor at Antai College.
 
-My research lies at the **Operations–Marketing interface**, with a focus on **return policy design**, **consumer information search**, and **mechanism design** in **digital marketplaces**. I develop analytical models to study how firms and platforms design pricing, refund, and insurance mechanisms under consumer heterogeneity and product fit uncertainty.
+My research lies at the **Operations–Marketing interface**, with a focus on **return policy design**, **consumer information search**, and **mechanism design** in **online retailing**. I develop analytical models to examine how firms and platforms design pricing, return, and insurance mechanisms under consumer heterogeneity and product fit uncertainty.
 
-Three of my papers are currently under revision at *Production and Operations Management (UTD-24/FT50)*.
+**Three papers are currently under revision at _Production and Operations Management_ (UTD-24/FT50).**
 
-### Research Interests
-- Return policy design and refund mechanisms  
-- Consumer search and information acquisition  
-- Mechanism design and platform governance  
-- E-commerce operations and supply chain decision models  
+---
 
-### Education
+## Research Interests
+- Operations–Marketing Interface  
+- E-commerce Operations (Pricing and Return Policy Design)  
+- Supply Chain Management  
+- Network Economics  
+
+## Education
 - **Shanghai Jiao Tong University** — Ph.D., Management Science and Engineering (Operations Management), 2021–2026  
 - **Rutgers, The State University of New Jersey** — Visiting Ph.D., Supply Chain Management, 2024–2025  
 - **Huazhong University of Science and Technology** — B.S., Information Management and Information Systems, 2017–2021  
+
+## Industry Internships
+
+- **Tencent Research Institute (Beijing)** — Economic & Financial Research Intern, Aug 2025–Oct 2025  
+  Studied platform governance and incentive design in social e-commerce using network analysis and simulation-based evaluation.
+
+- **ByteDance (International E-commerce Division)** — Business Analytics Intern, Jun 2025–Jul 2025  
+  Designed merchant evaluation metrics and conducted data-driven analysis to support international marketplace operations.
+
+- **Ant Group Research Institute (Shanghai)** — Data & Modeling Intern, Apr 2024–Jun 2024  
+  Conducted large-scale survey data modeling and developed macro-level indicators for digital economy research.
+
+---
 
 If you are interested in my work, please see the **Research** page or download my **CV**.
