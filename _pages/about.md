@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. candidate in **Management Science and Engineering (Operations Management)** at **Shanghai Jiao Tong University, Antai College of Economics and Management**, advised by **Prof. Fangruo Chen**, Dean and Guangqi Chair Professor at Antai College.
+I am a Ph.D. candidate in **Management Science and Engineering (Operations Management)** at **Shanghai Jiao Tong University, Antai College of Economics and Management**, advised by **[Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)**, Dean and Guangqi Chair Professor at Antai College.
 
 My research lies at the **Operations–Marketing interface**, with a focus on **return policy design**, **consumer information search**, and **mechanism design** in **online retailing**. I develop analytical models to examine how firms and platforms design pricing, return, and insurance mechanisms under consumer heterogeneity and product fit uncertainty.
 
