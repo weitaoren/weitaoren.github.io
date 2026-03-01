@@ -28,63 +28,63 @@ author:
   uri              :
   email            : "wt.ren@sjtu.edu.cn"
 
-  # Academic websites
-  academia         :
-  arxiv            :
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      :
-  impactstory      :
-  orcid            :
-  semantic         :
-  ssrn             :
-  pubmed           :
-  researchgate     :
-  scopus           :
-  zotero           :
+  # # Academic websites
+  # academia         :
+  # arxiv            :
+  # googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  # inspire-hep      :
+  # impactstory      :
+  # orcid            :
+  # semantic         :
+  # ssrn             :
+  # pubmed           :
+  # researchgate     :
+  # scopus           :
+  # zotero           :
 
-  # Repositories and software development
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  github           : "weitaoren"
-  kaggle           :
-  stackoverflow    :
+  # # Repositories and software development
+  # bitbucket        :
+  # codepen          :
+  # dribbble         :
+  # github           : "weitaoren"
+  # kaggle           :
+  # stackoverflow    :
 
-  # Social media
-  artstation       :
-  bluesky          :
-  facebook         :
-  flickr           :
-  foursquare       :
-  goodreads        :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         :
-  mastodon         :
-  medium           :
-  pinterest        :
-  soundcloud       :
-  steam            :
-  telegram         :
-  tumblr           :
-  twitter          :
-  vine             :
-  weibo            :
-  wikipedia        :
-  xing             :
-  youtube          :
-  zhihu            :
+  # # Social media
+  # artstation       :
+  # bluesky          :
+  # facebook         :
+  # flickr           :
+  # foursquare       :
+  # goodreads        :
+  # google_plus      :
+  # keybase          :
+  # instagram        :
+  # lastfm           :
+  # linkedin         :
+  # mastodon         :
+  # medium           :
+  # pinterest        :
+  # soundcloud       :
+  # steam            :
+  # telegram         :
+  # tumblr           :
+  # twitter          :
+  # vine             :
+  # weibo            :
+  # wikipedia        :
+  # xing             :
+  # youtube          :
+  # zhihu            :
 
-# Publication Category
-publication_category:
-  books:
-    title: "Books"
-  manuscripts:
-    title: "Journal Articles"
-  conferences:
-    title: "Conference Papers"
+# # Publication Category
+# publication_category:
+#   books:
+#     title: "Books"
+#   manuscripts:
+#     title: "Journal Articles"
+#   conferences:
+#     title: "Conference Papers"
 
 # Site Settings
 teaser                   :
