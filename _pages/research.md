@@ -17,7 +17,7 @@ author_profile: true
 
 3. **Ren, Weitao**, Ru, Chuanshuai, Qi, Lian, Chen, Fangruo.  
    *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
-   **Revise and Resubmit in *Production and Operations Management***
+   **Reject and Resubmit in *Production and Operations Management***
 
 ## Work in Progress
 
