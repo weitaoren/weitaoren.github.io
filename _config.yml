@@ -10,7 +10,7 @@
 locale                   : "en-US"
 site_theme               : "default" # options: "default", "air", "sunrise", "mint", "dirt", "contrast"
 dark_mode                : false
-title                    : "Weitao Ren"
+title                    : "Weitao Ren (任伟涛)"
 title_separator          : "-"
 name                     : &name "Weitao Ren"
 description              : &description "Weitao Ren | Operations–Marketing Interface | Online Retailing | Return Policy Design"
@@ -21,7 +21,7 @@ repository               : "weitaoren/weitaoren.github.io"
 # Site Author (sidebar)
 author:
   avatar           : "profile.png"  # put profile.png in /images/ (or adjust path per your template)
-  name             : "Weitao Ren (任伟涛)"
+  name             : "Weitao Ren"
   pronouns         :
   bio              : "Ph.D. Candidate at Shanghai Jiao Tong University."
   location         : "Shanghai, China"
