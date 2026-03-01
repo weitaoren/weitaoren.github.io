@@ -29,7 +29,7 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 
 ## Industry Internships
 
-- **Tencent Research Institute** — Economic & Financial Intern, Aug 2025–Oct 2025  
+- **Tencent Research Institute** — Research Intern, Aug 2025–Oct 2025  
   Studied platform governance and incentive design in social e-commerce using network analysis and simulation-based evaluation.
 
 - **ByteDance** — Business Analytics Intern, Jun 2025–Jul 2025  
