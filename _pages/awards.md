@@ -12,7 +12,7 @@ classes: wide
 
 ## Huazhong University of Science and Technology
 - National Scholarship  
-- Outstanding Undergraduate (Top Student)  
+- Outstanding Undergraduate
 - Outstanding Student Leader  
 - Merit Student  
 
