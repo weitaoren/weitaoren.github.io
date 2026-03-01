@@ -7,6 +7,6 @@ redirect_from:
   - /resume
 ---
 
-My CV is available for download below.
+My CV is available here.
 
 [Download CV]({{ base_path }}/files/Weitao_Ren_CV.pdf){: .btn .btn--primary }
