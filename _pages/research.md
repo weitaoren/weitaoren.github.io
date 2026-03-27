@@ -9,15 +9,15 @@ author_profile: true
 
 1. **Ren, Weitao**, Ru, Chuanshuai, Xiao, Wenqiang, Chen, Fangruo.  
    *Why Full Refunds Prevail: A Product Fitness Perspective.*  
-   **Forthcoming in *Production and Operations Management***
+   ***Production and Operations Management,Forthcoming.***
 
 2. Chen, Fangruo, **Ren, Weitao**, Xiao, Wenqiang.  
    *Optimal Return Policies with Heterogeneous Consumer Search.*  
-   **Major Revision in *Production and Operations Management* (Corresponding Author)**
+   **Major Revision in *Production and Operations Management* (Corresponding Author).**
 
 3. **Ren, Weitao**, Ru, Chuanshuai, Qi, Lian, Chen, Fangruo.  
    *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
-   **Reject and Resubmit in *Production and Operations Management***
+   **Reject and Resubmit in *Production and Operations Management.***
 
 ## Work in Progress
 
