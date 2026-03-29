@@ -21,10 +21,10 @@ author_profile: true
    *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
    **Reject and Resubmit in *Production and Operations Management.***
 
-## Work in Progress
+//## Work in Progress
 
-- *Joint Advertising and Participation Decisions in Cross-Store Promotions*, with Fangruo Chen & Yao Chen
-- *Optimal Price Guarantee Strategy under Consumer Anticipated Regret*, with Fangruo Chen & Chengjie Li
+//- *Joint Advertising and Participation Decisions in Cross-Store Promotions*, with Fangruo Chen & Yao Chen
+//- *Optimal Price Guarantee Strategy under Consumer Anticipated Regret*, with Fangruo Chen & Chengjie Li
 
 ## Conference and Talk
 
