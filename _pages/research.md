@@ -7,7 +7,7 @@ author_profile: true
 ## Published/Accepted Papers
 
 1. **Ren, Weitao**, Ru, Chuanshuai, Xiao, Wenqiang, Chen, Fangruo.  
-   [*Why Full Refunds Prevail: A Product Fitness Perspective.*](https://journals.sagepub.com/doi/10.1177/10591478261442318)    
+   [*Why Full Refunds Prevail: A Product Fit Perspective.*](https://journals.sagepub.com/doi/10.1177/10591478261442318)    
    ***Production and Operations Management***, published online March 2026.
    
 ## Working Papers
