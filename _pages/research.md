@@ -13,7 +13,7 @@ author_profile: true
 ## Working Papers
 
 1. Chen, Fangruo, **Ren, Weitao**, Xiao, Wenqiang.  
-   *Optimal Return Policies with Heterogeneous Consumer Search.*  
+   *Optimal Return Policies with Heterogeneous Search Rewards.*  
    **Major Revision in *Production and Operations Management* (Corresponding Author).**
 
 2. **Ren, Weitao**, Ru, Chuanshuai, Qi, Lian, Chen, Fangruo.  
