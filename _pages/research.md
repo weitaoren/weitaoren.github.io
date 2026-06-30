@@ -18,7 +18,7 @@ author_profile: true
 2. **Ren, Weitao**, Ru, Chuanshuai, Qi, Lian, Chen, Fangruo.  
    *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
 
-## Conference and Talk
+## Conference Presentations & Talks
 
 - *Optimal Return Policies with Heterogeneous Search Rewards.*  
   The 18th International Annual Conference of Chinese Scholars in Management Science and Engineering (CSAMSE), Shenyang, China, Jul 27–28, 2026.
