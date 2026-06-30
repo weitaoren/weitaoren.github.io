@@ -7,6 +7,7 @@ classes: wide
 ---
 
 ## Shanghai Jiao Tong University
+- Outstanding Graduates
 - Merit Student  
 - Academic Scholarship  
 
