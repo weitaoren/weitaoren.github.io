@@ -14,14 +14,13 @@ author_profile: true
 
 1. Chen, Fangruo, **Ren, Weitao**, Xiao, Wenqiang.  
    *Optimal Return Policies with Heterogeneous Search Rewards.*  
-   **Major Revision in *Production and Operations Management* (Corresponding Author).**
-
+   
 2. **Ren, Weitao**, Ru, Chuanshuai, Qi, Lian, Chen, Fangruo.  
    *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
-   **Reject and Resubmit in *Production and Operations Management.***
-
 
 ## Conference and Talk
 
+- *Optimal Return Policies with Heterogeneous Search Rewards.*  
+  The 18th International Annual Conference of Chinese Scholars in Management Science and Engineering (CSAMSE), Shenyang, China, Jul 27–28, 2026.
 - *Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance.*  
   The 17th International Annual Conference of Chinese Scholars in Management Science and Engineering (CSAMSE), Chengdu, China, Jul 26–27, 2025.
