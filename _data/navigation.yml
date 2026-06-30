@@ -11,8 +11,8 @@ main:
   - title: "Research"
     url: /research/
     
-  - title: "Awards"
-    url: /awards/
+  # - title: "Awards"
+  #  url: /awards/
     
   # - title: "CV"
   #  url: /cv/
