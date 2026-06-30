@@ -44,4 +44,4 @@ My research lies at the **Operations–Marketing interface**, with a focus on **
 
 ---
 
-If you are interested in my work, please see the **Research** page or download my **CV**.
+If you are interested in my work, please see the **Research** page.
