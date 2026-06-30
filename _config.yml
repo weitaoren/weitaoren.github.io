@@ -28,6 +28,7 @@ author:
   employer         : "Shanghai Jiao Tong University"
   uri              :
   email            : "wt.ren@sjtu.edu.cn"
+  orcid            : "https://orcid.org/0009-0003-8428-0504"
 
   # # Academic websites
   # academia         :
@@ -35,7 +36,7 @@ author:
   # googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   # inspire-hep      :
   # impactstory      :
-  # orcid            :
+  
   # semantic         :
   # ssrn             :
   # pubmed           :
