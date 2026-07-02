@@ -4,7 +4,7 @@
 
 - **Rutgers, The State University of New Jersey**, *Rutgers Business School* (2024-2025)  
   **Visiting Ph.D.** Student in Supply Chain Management  
-  Academic Advisors: **[Prof. Wenqiang Xiao](https://www.stern.nyu.edu/faculty/bio/wenqiang-xiao)**, **[Prof. Lian Qi](https://www.business.rutgers.edu/faculty/lian-qi)**
+  Academic Advisors: **[Prof. Wenqiang Xiao](https://www.stern.nyu.edu/faculty/bio/wenqiang-xiao)** (NYU Stern), **[Prof. Lian Qi](https://www.business.rutgers.edu/faculty/lian-qi)** (Rutgers)
 
 - **Huazhong University of Science and Technology**, *School of Management* (2017-2021)  
   **B.S.** in Information Management and Information Systems  
