@@ -8,7 +8,7 @@
 
 *Note: \* represents the corresponding author.*
 
-## Talks
+## Conference and Talks
 
 - **Optimal Return Policies with Heterogeneous Search Rewards**  
   The 18th International Annual Conference of Chinese Scholars in Management Science and Engineering (CSAMSE), Shenyang, China, Jun 27-28, 2026.
