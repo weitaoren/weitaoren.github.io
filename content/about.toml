@@ -3,9 +3,10 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "Operations–Marketing Interface",
+  "E-commerce Operations",
+  "Supply Chain Management",
+  "Network Economics"
 ]
 
 [[sections]]
@@ -15,15 +16,13 @@ source = "bio.md"
 title = "About"
 
 [[sections]]
-id = "featured_publications"
-type = "publications"
-title = "Selected Publications"
-filter = "selected"
-limit = 5
+id = "education"
+type = "markdown"
+source = "education.md"
+title = "Education"
 
 [[sections]]
-id = "news"
-type = "list"
-title = "News"
-source = "news.toml"
-
+id = "industry"
+type = "markdown"
+source = "industry.md"
+title = "Industry Internships"

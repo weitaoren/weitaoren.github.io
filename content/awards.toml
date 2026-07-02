@@ -1,27 +1,39 @@
 type = "card"
 title = "Awards"
-description = "Honors and awards I have received."
+description = "Selected honors and awards."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Outstanding Graduate"
+subtitle = "Shanghai Jiao Tong University"
+date = "2026"
+content = "University-level graduation honor."
+
+[[items]]
+title = "Merit Student"
+subtitle = "Shanghai Jiao Tong University"
 date = "2025"
-content = "Description of the award."
+content = "University-level honor for academic performance and overall excellence."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2024"
-content = "Description of the award."
+title = "Academic Scholarship"
+subtitle = "Shanghai Jiao Tong University"
+date = "2021–2025"
+content = "Scholarship awarded for academic performance during Ph.D. study."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
+title = "Distinguished Undergraduate Student"
+subtitle = "Huazhong University of Science and Technology"
+date = "2021"
+content = "University-level honor for outstanding undergraduate students."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "National Scholarship"
+subtitle = "Huazhong University of Science and Technology"
+date = "2020"
+content = "National-level scholarship awarded by the Ministry of Education of China."
+
+[[items]]
+title = "Merit Student"
+subtitle = "Huazhong University of Science and Technology"
+date = "2019"
+content = "University-level honor for academic performance and overall excellence."

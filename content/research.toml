@@ -1,0 +1,7 @@
+type = "publication"
+title = "Research"
+description = "Still working on it."
+source = "publications.bib"
+section_title = "Published Papers"
+details_source = "research.md"
+hide_controls = true

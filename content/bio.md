@@ -1,5 +1,3 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I received my Ph.D. in **Management Science and Engineering (Operations Management)** from **Antai College of Economics and Management, Shanghai Jiao Tong University**, advised by **[Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)**, Dean and Guangqi Chair Professor at Antai College.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
-
-My current research focuses on investigating the mathematical principles of natural philosophy.
+My research lies at the **Operations–Marketing interface**, with a focus on **return policy design**, **consumer information search**, and **mechanism design** in **online retailing**. I develop analytical models to examine how firms and platforms design pricing, return, and insurance mechanisms under consumer heterogeneity and product fit uncertainty.

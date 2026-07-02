@@ -128,7 +128,7 @@ export default function Profile({ author, social, features, researchInterests }:
                 <h1 className="text-3xl font-serif font-bold text-primary mb-2">
                     {author.name}
                 </h1>
-                <p className="text-lg text-accent font-medium mb-1">
+                <p className="text-lg text-primary font-medium mb-1">
                     {author.title}
                 </p>
                 <p className="text-neutral-600 mb-2">
@@ -195,6 +195,9 @@ export default function Profile({ author, social, features, researchInterests }:
                                                 {social.location_details?.map((line, i) => (
                                                     <p key={i} className="break-words">{line}</p>
                                                 ))}
+                                                {(!social.location_details || social.location_details.length === 0) && social.location && (
+                                                    <p className="break-words">{social.location}</p>
+                                                )}
                                                 <div className="mt-2 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 justify-center">
                                                     {social.location_url && (
                                                         <a
@@ -307,11 +310,11 @@ export default function Profile({ author, social, features, researchInterests }:
             {researchInterests && researchInterests.length > 0 && (
                 <div className="bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-6 hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
                     <h3 className="font-semibold text-primary mb-3">{messages.profile.researchInterests}</h3>
-                    <div className="space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
+                    <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
                         {researchInterests.map((interest, index) => (
-                            <div key={index}>{interest}</div>
+                            <li key={index}>{interest}</li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             )}
 

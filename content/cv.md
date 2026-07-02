@@ -1,26 +1,34 @@
-## Education
+- ## Education
 
-**The University of Example**, PhD in Natural Science, *2025 - Present*
-- Research focus: Mathematical Principles of Natural Philosophy
-- Supervisor: Prof. Advisor One and Dr. Advisor Two
+  **Shanghai Jiao Tong University**  
+  Ph.D. in Management Science and Engineering (Operations Management), 2021–2026  
+  Antai College of Economics and Management  
+  Advisor: [Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)
 
-**The University of Example**, BSc in Natural Science, *2021 - 2025*
-- Graduated with First Class Honours
+  **Rutgers, The State University of New Jersey**  
+  Visiting Ph.D. Student in Supply Chain Management, 2024–2025  
+  Rutgers Business School  
+  Academic Advisors: [Prof. Wenqiang Xiao](https://www.stern.nyu.edu/faculty/bio/wenqiang-xiao), [Prof. Lian Qi](https://www.business.rutgers.edu/faculty/lian-qi)
 
-## Experience
+  **Huazhong University of Science and Technology**  
+  B.S. in Information Management and Information Systems, 2017–2021  
+  School of Management  
+  Undergraduate Thesis Advisor: [Prof. Hu Qin](https://cm.hust.edu.cn/info/1768/24406.htm)
 
-**Example Role**
-Company/Institution
-*2023 - 2024*
-- Description of key responsibilities and achievements.
-- Utilized skills to solve problems.
+  ## Research Interests
 
-## Skills
+  - Operations–Marketing Interface
+  - E-commerce and Platform Operations
+  - Return Policies and Product-Fit Uncertainty
+  - Consumer Search and Information Design
 
-- **Programming:** Python, C++, MATLAB, LaTeX
-- **Data Analysis:** Pandas, NumPy, SciPy
-- **Languages:** English (Native), French (Fluent)
+  ## Industry Internships
 
-## Awards & Honors
+  **Tencent Research Institute**  
+  Research Intern, Aug 2025–Oct 2025
 
-- **First Prize in Example Competition** - Committee of Example (*2024*)
+  **ByteDance**  
+  Business Analytics Intern, Jun 2025–Jul 2025
+
+  **Ant Group Research Institute**  
+  Data & Modeling Intern, Apr 2024–Jun 2024
