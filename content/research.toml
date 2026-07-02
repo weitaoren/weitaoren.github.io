@@ -1,6 +1,6 @@
 type = "publication"
 title = "Research"
-description = "Still working on it."
+description = "Still learning, still working."
 source = "publications.bib"
 section_title = "Published Papers"
 details_source = "research.md"
