@@ -1,11 +1,11 @@
 [site]
-title = "Weitao Ren"
+title = "Weitao Ren (任伟涛)"
 description = "Personal website of Weitao Ren"
 favicon = "/favicon.png"
 last_updated = "July 2026"
 
 [author]
-name = "Weitao Ren (任伟涛)"
+name = "Weitao Ren"
 title = "Ph.D. in Management Science and Engineering"
 institution = "Shanghai Jiao Tong University"
 avatar = "/bio.jpg"
