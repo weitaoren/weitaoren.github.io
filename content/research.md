@@ -1,10 +1,12 @@
 ## Working Papers
 
 - **Optimal Return Policies with Heterogeneous Search Rewards**  
-  Fangruo Chen, **Weitao Ren**, Wenqiang Xiao
+  Fangruo Chen, **Weitao Ren***, Wenqiang Xiao
 
 - **Managing Product Fit Uncertainty in Online Shopping: On Information Search and Return Shipping Insurance**  
   **Weitao Ren**, Chuanshuai Ru, Lian Qi, Fangruo Chen
+
+*Note: \* represents the corresponding author.*
 
 ## Talks
 
