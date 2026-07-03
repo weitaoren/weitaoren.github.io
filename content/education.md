@@ -7,5 +7,5 @@
   Academic Advisors: **[Prof. Wenqiang Xiao](https://www.stern.nyu.edu/faculty/bio/wenqiang-xiao)** (NYU Stern), **[Prof. Lian Qi](https://www.business.rutgers.edu/faculty/lian-qi)** (Rutgers)
 
 - **Huazhong University of Science and Technology**, *School of Management* (2017-2021)  
-  **B.S.** in Information Management and Information Systems  
+  **Bachelor** in Information Management and Information Systems  
   Undergraduate Thesis Advisor: **[Prof. Hu Qin](https://cm.hust.edu.cn/info/1768/24406.htm)**
