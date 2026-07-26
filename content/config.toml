@@ -1,18 +1,18 @@
 [site]
 title = "Weitao Ren (任伟涛)"
 description = "Personal website of Weitao Ren"
-favicon = "/favicon.png"
+favicon = "/cufe-logo.png"
 last_updated = "July 2026"
 
 [author]
 name = "Weitao Ren"
-title = "Ph.D. in Management Science and Engineering"
-institution = "Shanghai Jiao Tong University"
-avatar = "/bio.jpg"
+title = "Assistant Professor"
+institution = "Supply Chain and Operations Management\nBusiness School\nCentral University of Finance and Economics"
+avatar = "/profile.png"
 
 [social]
-email = "wt.ren@sjtu.edu.cn"
-location = "Shanghai, China"
+email = "wt.ren@cufe.edu.cn"
+location = "Beijing, China"
 location_url = ""
 location_details = []
 google_scholar = ""

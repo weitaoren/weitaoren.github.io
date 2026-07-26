@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import Link from 'next/link';
 import { useMessages } from '@/lib/i18n/useMessages';
 
 interface AboutProps {
@@ -30,14 +31,34 @@ export default function About({ content, title }: AboutProps) {
                         ul: ({ children }) => <ul className="list-disc pl-5 mb-4 space-y-3">{children}</ul>,
                         ol: ({ children }) => <ol className="list-decimal pl-5 mb-4 space-y-3">{children}</ol>,
                         li: ({ children }) => <li className="pl-1">{children}</li>,
-                        a: ({ ...props }) => (
-                            <a
-                                {...props}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary font-semibold underline underline-offset-4 decoration-neutral-300 transition-colors duration-200 hover:decoration-primary"
-                            />
-                        ),
+                        a: ({ href = '', children, ...props }) => {
+                            const className = "text-primary font-semibold underline underline-offset-4 decoration-neutral-300 transition-colors duration-200 hover:decoration-primary";
+
+                            if (href.startsWith('/')) {
+                                return (
+                                    <Link
+                                        href={href}
+                                        className={className}
+                                        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}
+                                        scroll
+                                    >
+                                        {children}
+                                    </Link>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    {...props}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={className}
+                                >
+                                    {children}
+                                </a>
+                            );
+                        },
                         blockquote: ({ children }) => (
                             <blockquote className="border-l-4 border-accent/50 pl-4 italic my-4 text-neutral-600 dark:text-neutral-500">
                                 {children}

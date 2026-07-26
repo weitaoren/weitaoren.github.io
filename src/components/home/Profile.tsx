@@ -9,9 +9,8 @@ import {
     HeartIcon,
     MapPinIcon
 } from '@heroicons/react/24/outline';
-import { MapPinIcon as MapPinSolidIcon, EnvelopeIcon as EnvelopeSolidIcon } from '@heroicons/react/24/solid';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
-import { Github, Linkedin, Pin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import type { SiteConfig } from '@/lib/config';
 import { useMessages } from '@/lib/i18n/useMessages';
 
@@ -40,10 +39,7 @@ export default function Profile({ author, social, features, researchInterests }:
     const [hasLiked, setHasLiked] = useState(false);
     const [showThanks, setShowThanks] = useState(false);
     const [showAddress, setShowAddress] = useState(false);
-    const [isAddressPinned, setIsAddressPinned] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
-    const [isEmailPinned, setIsEmailPinned] = useState(false);
-    const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | null>(null);
 
     // Check local storage for user's like status
     useEffect(() => {
@@ -118,7 +114,7 @@ export default function Profile({ author, social, features, researchInterests }:
                     alt={author.name}
                     width={256}
                     height={256}
-                    className="w-full h-full object-cover object-[32%_center]"
+                    className="w-full h-full object-cover object-center"
                     priority
                 />
             </div>
@@ -131,7 +127,7 @@ export default function Profile({ author, social, features, researchInterests }:
                 <p className="text-lg text-primary font-medium mb-1">
                     {author.title}
                 </p>
-                <p className="text-neutral-600 mb-2">
+                <p className="text-neutral-600 mb-2 whitespace-pre-line leading-relaxed">
                     {author.institution}
                 </p>
             </div>
@@ -145,53 +141,35 @@ export default function Profile({ author, social, features, researchInterests }:
                             <div key={link.name} className="relative">
                                 <button
                                     onMouseEnter={() => {
-                                        if (!isAddressPinned) setShowAddress(true);
-                                        setLastClickedTooltip('address');
+                                        setShowEmail(false);
+                                        setShowAddress(true);
                                     }}
-                                    onMouseLeave={() => !isAddressPinned && setShowAddress(false)}
+                                    onMouseLeave={() => setShowAddress(false)}
                                     onClick={() => {
-                                        setIsAddressPinned(!isAddressPinned);
-                                        setShowAddress(!isAddressPinned);
-                                        setLastClickedTooltip('address');
+                                        setShowEmail(false);
+                                        setShowAddress((visible) => !visible);
                                     }}
-                                    className={`p-2 sm:p-2 transition-colors duration-200 ${isAddressPinned
-                                        ? 'text-accent'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent'
-                                        }`}
+                                    type="button"
+                                    className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
                                     aria-label={link.name}
+                                    aria-expanded={showAddress}
                                 >
-                                    {isAddressPinned ? (
-                                        <MapPinSolidIcon className="h-5 w-5" />
-                                    ) : (
-                                        <MapPinIcon className="h-5 w-5" />
-                                    )}
+                                    <MapPinIcon className="h-5 w-5" />
                                 </button>
 
                                 {/* Address tooltip */}
                                 <AnimatePresence>
-                                    {(showAddress || isAddressPinned) && (
+                                    {showAddress && (
                                         <motion.div
                                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                                             animate={{ opacity: 1, y: -10, scale: 1 }}
                                             exit={{ opacity: 0, y: -20, scale: 0.8 }}
-                                            className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap ${lastClickedTooltip === 'address' ? 'z-20' : 'z-10'
-                                                }`}
-                                            onMouseEnter={() => {
-                                                if (!isAddressPinned) setShowAddress(true);
-                                                setLastClickedTooltip('address');
-                                            }}
-                                            onMouseLeave={() => !isAddressPinned && setShowAddress(false)}
+                                            className="absolute z-20 top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap"
+                                            onMouseEnter={() => setShowAddress(true)}
+                                            onMouseLeave={() => setShowAddress(false)}
                                         >
                                             <div className="text-center">
-                                                <div className="flex items-center justify-center space-x-2 mb-1">
-                                                    <p className="font-semibold">{messages.profile.workAddress}</p>
-                                                    {!isAddressPinned && (
-                                                        <div className="flex items-center space-x-0.5 text-xs text-neutral-400 opacity-60">
-                                                            <Pin className="h-2.5 w-2.5" />
-                                                            <span className="hidden sm:inline">{messages.profile.click}</span>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                                <p className="font-semibold mb-1">{messages.profile.workAddress}</p>
                                                 {social.location_details?.map((line, i) => (
                                                     <p key={i} className="break-words">{line}</p>
                                                 ))}
@@ -225,53 +203,35 @@ export default function Profile({ author, social, features, researchInterests }:
                             <div key={link.name} className="relative">
                                 <button
                                     onMouseEnter={() => {
-                                        if (!isEmailPinned) setShowEmail(true);
-                                        setLastClickedTooltip('email');
+                                        setShowAddress(false);
+                                        setShowEmail(true);
                                     }}
-                                    onMouseLeave={() => !isEmailPinned && setShowEmail(false)}
+                                    onMouseLeave={() => setShowEmail(false)}
                                     onClick={() => {
-                                        setIsEmailPinned(!isEmailPinned);
-                                        setShowEmail(!isEmailPinned);
-                                        setLastClickedTooltip('email');
+                                        setShowAddress(false);
+                                        setShowEmail((visible) => !visible);
                                     }}
-                                    className={`p-2 sm:p-2 transition-colors duration-200 ${isEmailPinned
-                                        ? 'text-accent'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent'
-                                        }`}
+                                    type="button"
+                                    className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
                                     aria-label={link.name}
+                                    aria-expanded={showEmail}
                                 >
-                                    {isEmailPinned ? (
-                                        <EnvelopeSolidIcon className="h-5 w-5" />
-                                    ) : (
-                                        <EnvelopeIcon className="h-5 w-5" />
-                                    )}
+                                    <EnvelopeIcon className="h-5 w-5" />
                                 </button>
 
                                 {/* Email tooltip */}
                                 <AnimatePresence>
-                                    {(showEmail || isEmailPinned) && (
+                                    {showEmail && (
                                         <motion.div
                                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                                             animate={{ opacity: 1, y: -10, scale: 1 }}
                                             exit={{ opacity: 0, y: -20, scale: 0.8 }}
-                                            className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap ${lastClickedTooltip === 'email' ? 'z-20' : 'z-10'
-                                                }`}
-                                            onMouseEnter={() => {
-                                                if (!isEmailPinned) setShowEmail(true);
-                                                setLastClickedTooltip('email');
-                                            }}
-                                            onMouseLeave={() => !isEmailPinned && setShowEmail(false)}
+                                            className="absolute z-20 top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap"
+                                            onMouseEnter={() => setShowEmail(true)}
+                                            onMouseLeave={() => setShowEmail(false)}
                                         >
                                             <div className="text-center">
-                                                <div className="flex items-center justify-center space-x-2 mb-1">
-                                                    <p className="font-semibold">{messages.profile.email}</p>
-                                                    {!isEmailPinned && (
-                                                        <div className="flex items-center space-x-0.5 text-xs text-neutral-400 opacity-60">
-                                                            <Pin className="h-2.5 w-2.5" />
-                                                            <span className="hidden sm:inline">{messages.profile.click}</span>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                                <p className="font-semibold mb-1">{messages.profile.email}</p>
                                                 <p className="break-words">{social.email?.replace('@', ' (at) ')}</p>
                                                 <div className="mt-2">
                                                     <a
