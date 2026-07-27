@@ -17,8 +17,8 @@
 
 - **Academic Scholarship**, Shanghai Jiao Tong University (2021–2025)
 
-- **Distinguished Undergraduate Student**, Huazhong University of Science and Technology (2021)
+- **Bachelor's Degree with Honors**, Huazhong University of Science and Technology (2021)
 
 - **National Scholarship**, Huazhong University of Science and Technology (2020)
 
-- **Merit Student**, Huazhong University of Science and Technology (2019)
+- **Outstanding Undergraduate Student**, Huazhong University of Science and Technology (2019)

@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import {
     MagnifyingGlassIcon,
     FunnelIcon,
@@ -66,11 +67,25 @@ export default function PublicationsList({ config, publications, embedded = fals
             transition={{ duration: 0.6, delay: 0.4 }}
         >
             <div className="mb-8">
-                <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary mb-4`}>{config.title}</h1>
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
+                    <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary`}>{config.title}</h1>
+                    {config.tagline && (
+                        <p className={`${embedded ? "text-sm" : "text-base"} italic text-neutral-500 dark:text-neutral-400`}>
+                            {config.tagline}
+                        </p>
+                    )}
+                </div>
                 {config.description && (
-                    <p className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl`}>
-                        {config.description}
-                    </p>
+                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl`}>
+                        <ReactMarkdown
+                            components={{
+                                p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+                                strong: ({ children }) => <strong className="font-semibold text-primary">{children}</strong>,
+                            }}
+                        >
+                            {config.description}
+                        </ReactMarkdown>
+                    </div>
                 )}
                 {config.section_title && (
                     <h2 className="text-2xl font-serif font-bold text-primary mt-8 mb-4 border-b border-neutral-200 dark:border-neutral-800 pb-2">

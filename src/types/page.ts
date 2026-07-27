@@ -7,6 +7,7 @@ export interface BasePageConfig {
 export interface PublicationPageConfig extends BasePageConfig {
     type: 'publication';
     source: string;
+    tagline?: string;
     section_title?: string;
     details_source?: string;
     hide_controls?: boolean;

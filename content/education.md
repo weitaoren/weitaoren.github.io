@@ -1,6 +1,6 @@
 - **Shanghai Jiao Tong University**, *Antai College of Economics and Management* (2021-2026)  
   **Ph.D.** in Management Science and Engineering (Operations Management)  
-  Advisor: **[Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)**
+  Advisor: **[Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)**, *Dean and Guangqi Chair Professor at Antai College.*
 
 - **Rutgers, The State University of New Jersey**, *Rutgers Business School* (2024-2025)  
   **Visiting Ph.D.** Student in Supply Chain Management  
