@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 import { useThemeStore, type Theme } from '@/lib/stores/themeStore';
 import { useMessages } from '@/lib/i18n/useMessages';
 import { cn } from '@/lib/utils';
@@ -19,11 +19,6 @@ function useThemeOptions(): ThemeOption[] {
 
   return [
     {
-      value: 'system',
-      label: messages.theme.system,
-      icon: <ComputerDesktopIcon className="h-4 w-4" />,
-    },
-    {
       value: 'light',
       label: messages.theme.light,
       icon: <SunIcon className="h-4 w-4" />,
@@ -37,10 +32,9 @@ function useThemeOptions(): ThemeOption[] {
 }
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useThemeStore();
+  const { theme, toggleTheme } = useThemeStore();
   const [mounted, setMounted] = useState(false);
   const messages = useMessages();
-  const themes = useThemeOptions();
 
   useEffect(() => {
     setMounted(true);
@@ -54,7 +48,7 @@ export function ThemeToggle() {
     );
   }
 
-  const currentTheme = themes.find((t) => t.value === theme) || themes[0];
+  const targetTheme = theme === 'dark' ? messages.theme.light : messages.theme.dark;
 
   return (
     <div className="relative">
@@ -63,12 +57,7 @@ export function ThemeToggle() {
         whileTap={{ scale: 0.95 }}
         type="button"
         onMouseDown={(e) => e.preventDefault()}
-        onClick={() => {
-          const order: Theme[] = ['system', 'light', 'dark'];
-          const index = order.indexOf(theme);
-          const next = order[(index + 1) % order.length];
-          setTheme(next);
-        }}
+        onClick={toggleTheme}
         className={cn(
           'flex items-center justify-center w-10 h-10 rounded-lg',
           'border border-neutral-200 bg-background hover:bg-neutral-50',
@@ -76,7 +65,8 @@ export function ThemeToggle() {
           'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50',
           'text-neutral-600 hover:text-primary dark:text-neutral-400 dark:hover:text-white'
         )}
-        title={`${messages.theme.currentTheme}: ${currentTheme.label}. ${messages.theme.cycleTheme}.`}
+        title={targetTheme}
+        aria-label={targetTheme}
       >
         <motion.div
           key={theme}
@@ -84,12 +74,10 @@ export function ThemeToggle() {
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          {theme === 'system' ? (
-            <ComputerDesktopIcon className="h-4 w-4" />
-          ) : theme === 'dark' ? (
-            <MoonIcon className="h-4 w-4" />
-          ) : (
+          {theme === 'dark' ? (
             <SunIcon className="h-4 w-4" />
+          ) : (
+            <MoonIcon className="h-4 w-4" />
           )}
         </motion.div>
       </motion.button>
