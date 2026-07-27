@@ -44,3 +44,9 @@ title = "Research"
 type = "page"
 target = "research"
 href = "/research"
+
+[[navigation]]
+title = "Experience"
+type = "page"
+target = "experience"
+href = "/experience"
