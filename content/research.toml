@@ -2,7 +2,7 @@ type = "publication"
 title = "Research"
 tagline = "Still learning, still working."
 description = """
-My research lies at the **Operations–Marketing interface**, with a focus on **platform mechanism design**, **seller strategies**, and **consumer behavior** in **online retailing**.
+My research lies at the Operations–Marketing interface, with a focus on platform mechanism design, seller strategies, and consumer behavior in online retailing.
 """
 source = "publications.bib"
 section_title = "Published Papers"

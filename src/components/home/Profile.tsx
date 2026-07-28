@@ -267,7 +267,7 @@ export default function Profile({ author, social, features, researchInterests }:
             {/* Research Interests */}
             {researchInterests && researchInterests.length > 0 && (
                 <div className="w-fit max-w-full mx-auto rounded-md border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/30 px-4 py-3 mb-6">
-                    <h3 className="font-semibold text-primary mb-3">{messages.profile.researchInterests}</h3>
+                    <h3 className="font-serif text-lg font-bold text-primary mb-3">{messages.profile.researchInterests}</h3>
                     <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
                         {researchInterests.map((interest, index) => (
                             <li key={index}>{interest}</li>
