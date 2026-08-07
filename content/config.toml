@@ -23,7 +23,7 @@ linkedin = ""
 
 [features]
 enable_likes = false
-enable_one_page_mode = false
+enable_one_page_mode = true
 
 [i18n]
 enabled = false

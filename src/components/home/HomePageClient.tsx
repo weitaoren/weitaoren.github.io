@@ -29,7 +29,7 @@ interface SectionConfig {
 
 type PageData =
   | { type: 'about'; id: string; sections: SectionConfig[] }
-  | { type: 'publication'; id: string; config: PublicationPageConfig; publications: Publication[] }
+  | { type: 'publication'; id: string; config: PublicationPageConfig; publications: Publication[]; detailsContent?: string }
   | { type: 'text'; id: string; config: TextPageConfig; content: string }
   | { type: 'card'; id: string; config: CardPageConfig }
   | { type: 'experience'; id: string; config: ExperiencePageConfig };
@@ -58,8 +58,8 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[18rem_minmax(0,1fr)] xl:gap-12">
+    <div className="mx-auto min-h-screen max-w-6xl bg-background px-4 py-8 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[16.5rem_minmax(0,1fr)] lg:gap-8 xl:gap-10">
         <div>
           <Profile
             author={data.author}
@@ -69,9 +69,23 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           />
         </div>
 
-        <div className="min-w-0 max-w-3xl space-y-8">
+        <div className="min-w-0 max-w-none space-y-8">
           {data.pagesToShow.map((page) => (
-            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
+            <section
+              key={page.id}
+              id={page.id}
+              className={`space-y-8 ${page.id === 'research' ? 'relative scroll-mt-4 pt-16 lg:pt-24' : 'scroll-mt-24'}`}
+            >
+              {page.id === 'research' && (
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 top-4 flex items-center lg:top-8"
+                >
+                  <span className="h-px flex-1 bg-gradient-to-r from-transparent via-accent/45 to-accent/25" />
+                  <span className="mx-3 h-2 w-2 rotate-45 border border-accent/60 bg-background" />
+                  <span className="h-px flex-1 bg-gradient-to-r from-accent/25 via-accent/45 to-transparent" />
+                </div>
+              )}
               {page.type === 'about' && page.sections.map((section: SectionConfig) => {
                 switch (section.type) {
                   case 'markdown':
@@ -116,6 +130,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
                 <PublicationsList
                   config={page.config}
                   publications={page.publications}
+                  detailsContent={page.detailsContent}
                   embedded={true}
                 />
               )}

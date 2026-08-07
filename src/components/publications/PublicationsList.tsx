@@ -9,6 +9,7 @@ import {
     FunnelIcon,
     CalendarIcon,
     BookOpenIcon,
+    LinkIcon,
     ClipboardDocumentIcon,
     DocumentTextIcon
 } from '@heroicons/react/24/outline';
@@ -21,10 +22,11 @@ import FormattedBibTeXText from './FormattedBibTeXText';
 interface PublicationsListProps {
     config: PublicationPageConfig;
     publications: Publication[];
+    detailsContent?: string;
     embedded?: boolean;
 }
 
-export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
+export default function PublicationsList({ config, publications, detailsContent, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
@@ -68,7 +70,7 @@ export default function PublicationsList({ config, publications, embedded = fals
         >
             <div className="mb-8">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
-                    <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary`}>{config.title}</h1>
+                    <h1 className={`${embedded ? "text-3xl" : "text-4xl"} font-serif font-bold text-primary`}>{config.title}</h1>
                     {config.tagline && (
                         <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} italic text-neutral-500 dark:text-neutral-400`}>
                             {config.tagline}
@@ -220,7 +222,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.1 * index }}
-                            className="relative rounded-xl border border-neutral-200 bg-white py-3 pl-1 pr-5 font-sans shadow-sm transition-all duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+                            className="relative rounded-xl border border-neutral-200 bg-white py-3 pl-3 pr-5 font-sans shadow-sm transition-all duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
                         >
                             <div className="flex flex-col md:flex-row gap-6">
                                 {pub.preview && (
@@ -237,7 +239,11 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </div>
                                 )}
                                 <div className="min-w-0 flex-grow">
-                                    <div className={cn(!pub.preview && "lg:grid lg:grid-cols-[3.5rem_minmax(0,1fr)_26rem] lg:items-center lg:gap-4")}>
+                                    <div className={cn(
+                                        !pub.preview && "lg:grid lg:grid-cols-[3.5rem_minmax(0,1fr)] lg:items-center lg:gap-4",
+                                        !pub.preview && embedded && "lg:grid-cols-[3.5rem_minmax(0,1fr)_8rem]",
+                                        !pub.preview && !embedded && "lg:grid-cols-[3.5rem_minmax(0,1fr)_26rem]"
+                                    )}>
                                         <p className="relative mb-2 h-12 w-14 translate-x-1 font-['Bodoni_72','Didot','Bodoni_MT',Georgia,serif] leading-none text-primary-light dark:text-neutral-300 lg:mb-0">
                                             <span className="absolute left-0.5 top-0 text-[1.05rem] font-semibold tracking-[0.03em]">{pub.year}</span>
                                             {pub.month && (
@@ -248,10 +254,19 @@ export default function PublicationsList({ config, publications, embedded = fals
                                             )}
                                         </p>
                                         <div className="min-w-0 lg:flex lg:min-h-20 lg:flex-col lg:items-start lg:justify-center lg:pl-1 lg:pr-3 lg:text-left">
-                                            <h3 className="mb-2 font-serif text-lg font-bold leading-tight text-primary lg:whitespace-nowrap">
+                                            <h3 className={cn(
+                                                "font-serif text-lg font-bold leading-tight text-primary",
+                                                embedded ? "mb-1" : "mb-2",
+                                                !embedded && "lg:whitespace-nowrap"
+                                            )}>
                                                 <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
                                             </h3>
-                                            <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} text-neutral-600 dark:text-neutral-400`}>
+                                            {embedded && (
+                                                <p className="mb-1 font-serif text-base font-semibold leading-relaxed text-accent xl:whitespace-nowrap">
+                                                    {venue}
+                                                </p>
+                                            )}
+                                            <p className={`${embedded ? "text-base" : "text-[1.0625rem]"} text-neutral-600 dark:text-neutral-400`}>
                                                 {pub.authors.map((author, idx) => (
                                                     <span key={idx}>
                                                         <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-primary' : 'decoration-neutral-400'}` : ''}`}>
@@ -266,11 +281,23 @@ export default function PublicationsList({ config, publications, embedded = fals
                                             </p>
                                         </div>
 
-                                        <div className="lg:flex lg:flex-col lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:text-center lg:dark:border-neutral-800">
-                                            <p className="mb-3 font-serif text-lg font-bold leading-relaxed text-accent lg:whitespace-nowrap">
-                                                {venue}
-                                            </p>
-                                            <div className="flex flex-wrap justify-center gap-2 lg:flex-nowrap">
+                                        <div className={cn(
+                                            "pt-3 lg:col-start-2 lg:flex lg:flex-col lg:items-start lg:text-left",
+                                            embedded
+                                                ? "lg:col-start-3 lg:items-center lg:justify-center lg:border-l lg:border-neutral-200 lg:pl-4 lg:pt-0 lg:dark:border-neutral-800"
+                                                : "lg:col-auto lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:pt-0 lg:text-center lg:dark:border-neutral-800"
+                                        )}>
+                                            {!embedded && (
+                                                <p className="mb-3 whitespace-nowrap font-serif text-lg font-bold leading-relaxed text-accent">
+                                                    {venue}
+                                                </p>
+                                            )}
+                                            <div className={cn(
+                                                "flex gap-2",
+                                                embedded
+                                                    ? "flex-wrap justify-center gap-1.5 lg:w-24 lg:flex-col lg:flex-nowrap"
+                                                    : "flex-wrap justify-center lg:flex-nowrap"
+                                            )}>
                                         {pub.doi && (
                                             <a
                                                 href={`https://doi.org/${pub.doi}`}
@@ -278,6 +305,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
                                             >
+                                                <LinkIcon className="mr-1.5 h-3 w-3" />
                                                 DOI
                                             </a>
                                         )}
@@ -348,7 +376,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 className="overflow-hidden mt-4"
                                             >
                                                 <div className="relative bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
-                                                    <pre className="text-xs text-neutral-600 dark:text-neutral-500 overflow-x-auto whitespace-pre-wrap font-mono">
+                                                    <pre className="overflow-x-auto whitespace-pre-wrap font-mono text-xs text-neutral-600 dark:text-neutral-500">
                                                         {pub.bibtex}
                                                     </pre>
                                                     <button
@@ -372,6 +400,41 @@ export default function PublicationsList({ config, publications, embedded = fals
                     })
                 )}
             </div>
+            {detailsContent && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.65 }}
+                    className={`${embedded ? "mt-8 text-base" : "mt-12 text-[1.0625rem]"} text-neutral-700 leading-relaxed dark:text-neutral-600`}
+                >
+                    <ReactMarkdown
+                        components={{
+                            h2: ({ children }) => <h2 className="mt-8 mb-4 border-b border-neutral-200 pb-2 font-serif text-2xl font-bold text-primary dark:border-neutral-800">{children}</h2>,
+                            h3: ({ children }) => <h3 className="mt-6 mb-3 text-xl font-semibold text-primary">{children}</h3>,
+                            p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+                            ul: ({ children }) => <ul className="mb-4 list-disc space-y-3 pl-5 marker:text-[0.85em]">{children}</ul>,
+                            ol: ({ children }) => <ol className="mb-4 list-decimal space-y-3 pl-5">{children}</ol>,
+                            li: ({ children }) => (
+                                <li className="pl-1 [&>p>strong:first-child]:font-serif [&>p>strong:first-child]:text-lg [&>p>strong:first-child]:font-bold [&>p>strong:first-child]:leading-tight">
+                                    {children}
+                                </li>
+                            ),
+                            a: ({ ...props }) => (
+                                <a
+                                    {...props}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-semibold text-primary underline decoration-neutral-300 underline-offset-4 transition-colors duration-200 hover:decoration-primary"
+                                />
+                            ),
+                            strong: ({ children }) => <strong className="font-semibold text-primary">{children}</strong>,
+                            em: ({ children }) => <em className="italic text-neutral-600 dark:text-neutral-500">{children}</em>,
+                        }}
+                    >
+                        {detailsContent}
+                    </ReactMarkdown>
+                </motion.div>
+            )}
         </motion.div>
     );
 }

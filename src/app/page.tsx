@@ -26,7 +26,7 @@ interface NewsItem {
 
 type PageData =
   | { type: 'about'; id: string; sections: SectionConfig[] }
-  | { type: 'publication'; id: string; config: PublicationPageConfig; publications: Publication[] }
+  | { type: 'publication'; id: string; config: PublicationPageConfig; publications: Publication[]; detailsContent?: string }
   | { type: 'text'; id: string; config: TextPageConfig; content: string }
   | { type: 'card'; id: string; config: CardPageConfig }
   | { type: 'experience'; id: string; config: ExperiencePageConfig };
@@ -97,6 +97,9 @@ function loadPageDataForLocale(locale: string | undefined): HomePageLocaleData {
             id: item.target,
             config: pubConfig,
             publications: parseBibTeX(bibtex, locale),
+            detailsContent: pubConfig.details_source
+              ? getMarkdownContent(pubConfig.details_source, locale)
+              : undefined,
           } as PageData;
         }
 

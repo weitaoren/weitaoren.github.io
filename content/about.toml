@@ -50,10 +50,3 @@ location = "Wuhan, China"
 secondary = "***Bachelor*** in Information Management and Information Systems"
 period = "2017–2021"
 note = "Undergraduate Thesis Advisor: **[Prof. Hu Qin](https://cm.hust.edu.cn/info/1768/24406.htm)**"
-
-[[sections]]
-id = "selected-publications"
-type = "publications"
-title = "Selected Publications"
-filter = "selected"
-limit = 1

@@ -22,7 +22,7 @@ export default function About({ content, title, divided = false }: AboutProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
         >
             <h2
-                className={`text-2xl font-serif font-bold text-primary mb-4 ${
+                className={`text-3xl font-serif font-bold text-primary mb-4 ${
                     divided ? 'border-b border-neutral-200 dark:border-neutral-800 pb-2' : ''
                 }`}
             >
