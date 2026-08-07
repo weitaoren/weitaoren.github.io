@@ -1,7 +1,15 @@
 export interface BasePageConfig {
-    type: 'about' | 'publication' | 'card' | 'text';
+    type: 'about' | 'publication' | 'card' | 'text' | 'experience';
     title: string;
     description?: string;
+}
+
+export interface AcademicEntry {
+    primary: string;
+    secondary: string;
+    location?: string;
+    period?: string;
+    note?: string;
 }
 
 export interface PublicationPageConfig extends BasePageConfig {
@@ -16,6 +24,18 @@ export interface PublicationPageConfig extends BasePageConfig {
 export interface TextPageConfig extends BasePageConfig {
     type: 'text';
     source: string;
+}
+
+export interface AwardEntry {
+    title: string;
+    institution: string;
+    period?: string;
+}
+
+export interface ExperiencePageConfig extends BasePageConfig {
+    type: 'experience';
+    internships: AcademicEntry[];
+    awards: AwardEntry[];
 }
 
 export interface CardItem {

@@ -39,32 +39,40 @@ export default function SelectedPublications({ publications, title, enableOnePag
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className="bg-neutral-50 dark:bg-neutral-900 p-5 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-md transition-shadow duration-200"
+                        className="rounded-lg border border-neutral-200 bg-neutral-50 py-3 pl-12 pr-5 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
                     >
-                        <h3 className="text-lg font-semibold text-primary mb-2 leading-tight">
-                            <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
-                        </h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-1">
-                            {pub.authors.map((author, idx) => (
-                                <span key={idx}>
-                                    <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-primary' : 'decoration-neutral-400'}` : ''}`}>
-                                        {author.name}
-                                    </span>
-                                    {author.isCorresponding && (
-                                        <sup className={`ml-0 ${author.isHighlighted ? 'text-primary' : 'text-neutral-600 dark:text-neutral-400'}`}>*</sup>
-                                    )}
-                                    {idx < pub.authors.length - 1 && ', '}
-                                </span>
-                            ))}
-                        </p>
-                        <p className="text-sm font-medium text-neutral-800 dark:text-neutral-500 mb-2">
-                            {[pub.journal || pub.conference, pub.year].filter(Boolean).join(', ')}
-                        </p>
-                        {(pub.description || pub.abstract) && (
-                            <p className="text-sm text-neutral-500 dark:text-neutral-500 leading-relaxed line-clamp-2">
-                                {pub.description || pub.abstract}
+                        <div className="grid grid-cols-[3.5rem_minmax(0,1fr)] items-center gap-4">
+                            <p className="relative h-12 w-14 -translate-x-2 font-['Bodoni_72','Didot','Bodoni_MT',Georgia,serif] leading-none text-primary dark:text-neutral-100">
+                                <span className="absolute left-0.5 top-0 text-[1.05rem] font-semibold tracking-[0.03em]">{pub.year}</span>
+                                {pub.month && (
+                                    <>
+                                        <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-[#b79a6a]/40 via-[#b79a6a] to-[#b79a6a]/40 dark:from-[#d2b889]/40 dark:via-[#d2b889] dark:to-[#d2b889]/40" />
+                                        <span className="absolute bottom-0 left-[2.05rem] text-[1.05rem] font-semibold tracking-[0.08em]">{String(pub.month).padStart(2, '0')}</span>
+                                    </>
+                                )}
                             </p>
-                        )}
+                            <div className="min-w-0 pl-3">
+                                <h3 className="mb-1 font-serif text-lg font-bold leading-tight text-primary">
+                                    <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
+                                </h3>
+                                <p className="mb-1 font-serif text-base font-semibold leading-relaxed text-primary dark:text-neutral-100">
+                                    {pub.journal || pub.conference}
+                                </p>
+                                <p className="text-sm text-primary dark:text-neutral-200">
+                                    {pub.authors.map((author, idx) => (
+                                        <span key={idx}>
+                                            <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-primary' : 'decoration-neutral-400'}` : ''}`}>
+                                                {author.name}
+                                            </span>
+                                            {author.isCorresponding && (
+                                                <sup className={`ml-0 ${author.isHighlighted ? 'text-primary' : 'text-neutral-600 dark:text-neutral-400'}`}>*</sup>
+                                            )}
+                                            {idx < pub.authors.length - 1 && ', '}
+                                        </span>
+                                    ))}
+                                </p>
+                            </div>
+                        </div>
                     </motion.div>
                 ))}
             </div>

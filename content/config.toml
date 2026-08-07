@@ -7,7 +7,7 @@ last_updated = "July 2026"
 [author]
 name = "Weitao Ren"
 title = "Assistant Professor"
-institution = "Supply Chain and Operations Management\nBusiness School\nCentral University of Finance and Economics"
+institution = "Business School, CUFE"
 avatar = "/profile.png"
 
 [social]
@@ -44,9 +44,3 @@ title = "Research"
 type = "page"
 target = "research"
 href = "/research"
-
-[[navigation]]
-title = "Experience"
-type = "page"
-target = "experience"
-href = "/experience"

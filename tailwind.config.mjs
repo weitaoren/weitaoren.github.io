@@ -1,5 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class', // Enable class strategy so `dark:` variants respond to the `.dark` class
@@ -12,8 +10,14 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Inter',
-          ...defaultTheme.fontFamily.sans,
+          'ui-serif',
+          'Charter',
+          'Iowan Old Style',
+          'Palatino Linotype',
+          'Palatino',
+          'Songti SC',
+          'STSong',
+          'serif',
         ],
       },
       colors: {
@@ -45,4 +49,4 @@ export default {
     },
   },
   plugins: [],
-}; 
+};

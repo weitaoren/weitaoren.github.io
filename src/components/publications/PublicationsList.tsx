@@ -70,13 +70,13 @@ export default function PublicationsList({ config, publications, embedded = fals
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
                     <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary`}>{config.title}</h1>
                     {config.tagline && (
-                        <p className={`${embedded ? "text-sm" : "text-base"} italic text-neutral-500 dark:text-neutral-400`}>
+                        <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} italic text-neutral-500 dark:text-neutral-400`}>
                             {config.tagline}
                         </p>
                     )}
                 </div>
                 {config.description && (
-                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl`}>
+                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500`}>
                         <ReactMarkdown
                             components={{
                                 p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
@@ -213,7 +213,6 @@ export default function PublicationsList({ config, publications, embedded = fals
                 ) : (
                     filteredPublications.map((pub, index) => {
                         const venue = pub.journal || pub.conference;
-                        const venueYear = venue ? `${venue}, ${pub.year}` : String(pub.year);
 
                         return (
                         <motion.div
@@ -221,7 +220,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.1 * index }}
-                            className="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-md transition-all duration-200"
+                            className="relative rounded-xl border border-neutral-200 bg-white py-3 pl-1 pr-5 font-sans shadow-sm transition-all duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
                         >
                             <div className="flex flex-col md:flex-row gap-6">
                                 {pub.preview && (
@@ -237,28 +236,41 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         </div>
                                     </div>
                                 )}
-                                <div className="flex-grow">
-                                    <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary mb-2 leading-tight`}>
-                                        <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
-                                    </h3>
-                                    <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 mb-2`}>
-                                        {pub.authors.map((author, idx) => (
-                                            <span key={idx}>
-                                                <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-primary' : 'decoration-neutral-400'}` : ''}`}>
-                                                    {author.name}
-                                                </span>
-                                                {author.isCorresponding && (
-                                                    <sup className={`ml-0 ${author.isHighlighted ? 'text-primary' : 'text-neutral-600 dark:text-neutral-400'}`}>*</sup>
-                                                )}
-                                                {idx < pub.authors.length - 1 && ', '}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-4">
-                                        {venueYear}
-                                    </p>
+                                <div className="min-w-0 flex-grow">
+                                    <div className={cn(!pub.preview && "lg:grid lg:grid-cols-[3.5rem_minmax(0,1fr)_26rem] lg:items-center lg:gap-4")}>
+                                        <p className="relative mb-2 h-12 w-14 translate-x-1 font-['Bodoni_72','Didot','Bodoni_MT',Georgia,serif] leading-none text-primary-light dark:text-neutral-300 lg:mb-0">
+                                            <span className="absolute left-0.5 top-0 text-[1.05rem] font-semibold tracking-[0.03em]">{pub.year}</span>
+                                            {pub.month && (
+                                                <>
+                                                    <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-[#b79a6a]/40 via-[#b79a6a] to-[#b79a6a]/40 dark:from-[#d2b889]/40 dark:via-[#d2b889] dark:to-[#d2b889]/40" />
+                                                    <span className="absolute bottom-0 left-[2.05rem] text-[1.05rem] font-semibold tracking-[0.08em]">{String(pub.month).padStart(2, '0')}</span>
+                                                </>
+                                            )}
+                                        </p>
+                                        <div className="min-w-0 lg:flex lg:min-h-20 lg:flex-col lg:items-start lg:justify-center lg:pl-1 lg:pr-3 lg:text-left">
+                                            <h3 className="mb-2 font-serif text-lg font-bold leading-tight text-primary lg:whitespace-nowrap">
+                                                <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
+                                            </h3>
+                                            <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} text-neutral-600 dark:text-neutral-400`}>
+                                                {pub.authors.map((author, idx) => (
+                                                    <span key={idx}>
+                                                        <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-primary' : 'decoration-neutral-400'}` : ''}`}>
+                                                            {author.name}
+                                                        </span>
+                                                        {author.isCorresponding && (
+                                                            <sup className={`ml-0 ${author.isHighlighted ? 'text-primary' : 'text-neutral-600 dark:text-neutral-400'}`}>*</sup>
+                                                        )}
+                                                        {idx < pub.authors.length - 1 && ', '}
+                                                    </span>
+                                                ))}
+                                            </p>
+                                        </div>
 
-                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        <div className="lg:flex lg:flex-col lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:text-center lg:dark:border-neutral-800">
+                                            <p className="mb-3 font-serif text-lg font-bold leading-relaxed text-[#8a4f5c] dark:text-[#d19aa5] lg:whitespace-nowrap">
+                                                {venue}
+                                            </p>
+                                            <div className="flex flex-wrap justify-center gap-2 lg:flex-nowrap">
                                         {pub.doi && (
                                             <a
                                                 href={`https://doi.org/${pub.doi}`}
@@ -307,6 +319,8 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 {messages.publications.bibtex}
                                             </button>
                                         )}
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <AnimatePresence>

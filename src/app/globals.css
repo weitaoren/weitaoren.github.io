@@ -85,7 +85,7 @@
   --color-glass-shadow: var(--glass-shadow);
   
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: ui-serif, Charter, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Songti SC', STSong, serif;
   --font-serif: 'Georgia CDN', Georgia, serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   

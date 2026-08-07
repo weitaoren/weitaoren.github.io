@@ -16,15 +16,40 @@ title = "About"
 
 [[sections]]
 id = "employment"
-type = "markdown"
-source = "employment.md"
-title = "Employment"
+type = "academic"
+title = "Academic Position"
+
+[[sections.entries]]
+primary = "**Central University of Finance and Economics**, *Business School*"
+location = "Beijing, China"
+secondary = "**Assistant Professor**"
+period = "2026–Present"
 
 [[sections]]
 id = "education"
-type = "markdown"
-source = "education.md"
+type = "academic"
 title = "Education"
+
+[[sections.entries]]
+primary = "**Shanghai Jiao Tong University**, *Antai College of Economics and Management*"
+location = "Shanghai, China"
+secondary = "***Ph.D.*** in Management Science and Engineering (Operations Management)"
+period = "2021–2026"
+note = "Advisor: **[Prof. Fangruo Chen](https://www.acem.sjtu.edu.cn/faculty/chenfangruo.html#container?54)**, *Dean and Guangqi Chair Professor at Antai College.*"
+
+[[sections.entries]]
+primary = "**Rutgers, The State University of New Jersey**, *Rutgers Business School*"
+location = "New Jersey, USA"
+secondary = "***Visiting Ph.D. Student*** in Supply Chain Management"
+period = "2024–2025"
+note = "Academic Advisors: **[Prof. Wenqiang Xiao](https://www.stern.nyu.edu/faculty/bio/wenqiang-xiao)** (NYU Stern), **[Prof. Lian Qi](https://www.business.rutgers.edu/faculty/lian-qi)** (Rutgers)"
+
+[[sections.entries]]
+primary = "**Huazhong University of Science and Technology**, *School of Management*"
+location = "Wuhan, China"
+secondary = "***Bachelor*** in Information Management and Information Systems"
+period = "2017–2021"
+note = "Undergraduate Thesis Advisor: **[Prof. Hu Qin](https://cm.hust.edu.cn/info/1768/24406.htm)**"
 
 [[sections]]
 id = "selected-publications"
