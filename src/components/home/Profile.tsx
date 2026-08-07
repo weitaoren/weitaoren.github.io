@@ -130,6 +130,11 @@ export default function Profile({ author, social, features, researchInterests }:
                 <p className="text-neutral-600 mb-2 whitespace-pre-line leading-relaxed">
                     {author.institution}
                 </p>
+                {author.quote && (
+                    <p className="font-serif text-sm italic text-neutral-500">
+                        {author.quote}
+                    </p>
+                )}
             </div>
 
             {/* Contact Links */}

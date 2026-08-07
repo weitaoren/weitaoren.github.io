@@ -242,7 +242,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                             <span className="absolute left-0.5 top-0 text-[1.05rem] font-semibold tracking-[0.03em]">{pub.year}</span>
                                             {pub.month && (
                                                 <>
-                                                    <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-[#b79a6a]/40 via-[#b79a6a] to-[#b79a6a]/40 dark:from-[#d2b889]/40 dark:via-[#d2b889] dark:to-[#d2b889]/40" />
+                                                    <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-accent/40 via-accent to-accent/40" />
                                                     <span className="absolute bottom-0 left-[2.05rem] text-[1.05rem] font-semibold tracking-[0.08em]">{String(pub.month).padStart(2, '0')}</span>
                                                 </>
                                             )}
@@ -267,7 +267,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         </div>
 
                                         <div className="lg:flex lg:flex-col lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:text-center lg:dark:border-neutral-800">
-                                            <p className="mb-3 font-serif text-lg font-bold leading-relaxed text-[#8a4f5c] dark:text-[#d19aa5] lg:whitespace-nowrap">
+                                            <p className="mb-3 font-serif text-lg font-bold leading-relaxed text-accent lg:whitespace-nowrap">
                                                 {venue}
                                             </p>
                                             <div className="flex flex-wrap justify-center gap-2 lg:flex-nowrap">

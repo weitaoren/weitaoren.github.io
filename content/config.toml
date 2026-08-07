@@ -2,12 +2,13 @@
 title = "Weitao Ren (任伟涛)"
 description = "Personal website of Weitao Ren"
 favicon = "/cufe-logo.png"
-last_updated = "July 2026"
+last_updated = "August 2026"
 
 [author]
 name = "Weitao Ren"
 title = "Assistant Professor"
 institution = "Business School, CUFE"
+quote = "Stay passionate."
 avatar = "/profile.png"
 
 [social]

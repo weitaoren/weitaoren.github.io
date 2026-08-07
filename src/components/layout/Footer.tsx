@@ -26,7 +26,7 @@ export default function Footer({ lastUpdated, lastUpdatedByLocale, defaultLocale
           <p className="text-xs text-neutral-500">
             {messages.footer.lastUpdated}: {resolvedLastUpdated}
             <span className="mx-2 text-neutral-300 dark:text-neutral-700">·</span>
-            <span className="text-neutral-400 transition-colors duration-200 hover:text-accent">
+            <span className="text-neutral-500 transition-colors duration-200 hover:text-accent">
               Have a nice day!
             </span>
           </p>

@@ -39,14 +39,14 @@ export default function SelectedPublications({ publications, title, enableOnePag
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className="rounded-lg border border-neutral-200 bg-neutral-50 py-3 pl-12 pr-5 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+                        className="rounded-lg border border-neutral-200 bg-white py-3 pl-12 pr-5 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
                     >
                         <div className="grid grid-cols-[3.5rem_minmax(0,1fr)] items-center gap-4">
                             <p className="relative h-12 w-14 -translate-x-2 font-['Bodoni_72','Didot','Bodoni_MT',Georgia,serif] leading-none text-primary dark:text-neutral-100">
                                 <span className="absolute left-0.5 top-0 text-[1.05rem] font-semibold tracking-[0.03em]">{pub.year}</span>
                                 {pub.month && (
                                     <>
-                                        <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-[#b79a6a]/40 via-[#b79a6a] to-[#b79a6a]/40 dark:from-[#d2b889]/40 dark:via-[#d2b889] dark:to-[#d2b889]/40" />
+                                        <span aria-hidden="true" className="absolute left-[1.45rem] top-[1.55rem] h-[1.5px] w-7 -rotate-[32deg] rounded-full bg-gradient-to-r from-accent/40 via-accent to-accent/40" />
                                         <span className="absolute bottom-0 left-[2.05rem] text-[1.05rem] font-semibold tracking-[0.08em]">{String(pub.month).padStart(2, '0')}</span>
                                     </>
                                 )}
