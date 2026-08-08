@@ -105,10 +105,10 @@ export default function Profile({ author, social, features, researchInterests }:
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-24"
+            className="lg:sticky lg:top-24 lg:-my-8 lg:border-r lg:border-neutral-200 lg:bg-[#f7f7f4] lg:px-3 lg:py-8"
         >
             {/* Profile Image */}
-            <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl">
+            <div className="mx-auto mb-5 h-52 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl">
                 <Image
                     src={author.avatar}
                     alt={author.name}
@@ -120,7 +120,7 @@ export default function Profile({ author, social, features, researchInterests }:
             </div>
 
             {/* Name and Title */}
-            <div className="text-center mb-6">
+            <div className="mb-4 text-center">
                 <h1 className="text-3xl font-serif font-bold text-primary mb-2">
                     {author.name}
                 </h1>
@@ -138,7 +138,7 @@ export default function Profile({ author, social, features, researchInterests }:
             </div>
 
             {/* Contact Links */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 relative px-2">
+            <div className="relative mb-4 flex flex-wrap justify-center gap-3 px-2 sm:gap-4">
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     if (link.isLocation) {
@@ -271,14 +271,21 @@ export default function Profile({ author, social, features, researchInterests }:
 
             {/* Research Interests */}
             {researchInterests && researchInterests.length > 0 && (
-                <div className="w-fit max-w-full mx-auto rounded-md border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/30 px-4 py-3 mb-6">
-                    <h3 className="font-serif text-lg font-bold text-primary mb-3">{messages.profile.researchInterests}</h3>
-                    <ul className="list-disc pl-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
+                <>
+                <div aria-hidden="true" className="relative mx-auto mt-4 flex items-center px-1">
+                    <span className="h-px flex-1 bg-gradient-to-r from-transparent via-accent/45 to-accent/25" />
+                    <span className="mx-3 h-2 w-2 rotate-45 border border-accent/60 bg-background" />
+                    <span className="h-px flex-1 bg-gradient-to-r from-accent/25 via-accent/45 to-transparent" />
+                </div>
+                <div className="mx-auto mb-6 max-w-full px-1 pt-3">
+                    <h3 className="mb-3 font-serif text-xl font-bold text-primary">{messages.profile.researchInterests}</h3>
+                    <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700 dark:text-neutral-500">
                         {researchInterests.map((interest, index) => (
-                            <li key={index}>{interest}</li>
+                            <li key={index} className="whitespace-nowrap">{interest}</li>
                         ))}
                     </ul>
                 </div>
+                </>
             )}
 
             {/* Like Button */}

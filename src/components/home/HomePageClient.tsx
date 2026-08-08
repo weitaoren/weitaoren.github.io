@@ -59,7 +59,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
 
   return (
     <div className="mx-auto min-h-screen max-w-6xl bg-background px-4 py-8 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[16.5rem_minmax(0,1fr)] lg:gap-8 xl:gap-10">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-0">
         <div>
           <Profile
             author={data.author}
@@ -69,7 +69,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           />
         </div>
 
-        <div className="min-w-0 max-w-none space-y-8">
+        <div className="min-w-0 max-w-none space-y-8 lg:pl-10">
           {data.pagesToShow.map((page) => (
             <section
               key={page.id}
