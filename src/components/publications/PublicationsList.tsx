@@ -69,13 +69,16 @@ export default function PublicationsList({ config, publications, detailsContent,
             transition={{ duration: 0.6, delay: 0.4 }}
         >
             <div className="mb-8">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4">
-                    <h1 className={`${embedded ? "text-3xl" : "text-4xl"} font-serif font-bold text-primary`}>{config.title}</h1>
-                    {config.tagline && (
-                        <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} italic text-neutral-500 dark:text-neutral-400`}>
-                            {config.tagline}
-                        </p>
-                    )}
+                <div className="section-heading-block mb-4">
+                    <div className="section-heading-row research-heading-row">
+                        <h1 className={`${embedded ? "text-3xl" : "text-4xl"} font-serif font-bold leading-none text-primary`}>{config.title}</h1>
+                        {config.tagline && (
+                            <p className={`${embedded ? "text-sm" : "text-[1.0625rem]"} italic leading-none text-neutral-500 dark:text-neutral-400`}>
+                                {config.tagline}
+                            </p>
+                        )}
+                    </div>
+                    <span aria-hidden="true" className="section-heading-rule" />
                 </div>
                 {config.description && (
                     <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500`}>
@@ -241,7 +244,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                 <div className="min-w-0 flex-grow">
                                     <div className={cn(
                                         !pub.preview && "lg:grid lg:grid-cols-[3.5rem_minmax(0,1fr)] lg:items-center lg:gap-4",
-                                        !pub.preview && embedded && "lg:grid-cols-[3.5rem_minmax(0,1fr)_8rem]",
+                                        !pub.preview && embedded && "lg:grid-cols-[3.5rem_minmax(0,1fr)_6.75rem]",
                                         !pub.preview && !embedded && "lg:grid-cols-[3.5rem_minmax(0,1fr)_26rem]"
                                     )}>
                                         <p className="relative mb-2 h-12 w-14 translate-x-1 font-['Bodoni_72','Didot','Bodoni_MT',Georgia,serif] leading-none text-primary-light dark:text-neutral-300 lg:mb-0">
@@ -262,7 +265,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                                 <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
                                             </h3>
                                             {embedded && (
-                                                <p className="mb-1 font-serif text-base font-semibold leading-relaxed text-accent xl:whitespace-nowrap">
+                                                <p className="mb-0.5 font-serif text-base font-semibold leading-relaxed text-[#a66f68] xl:whitespace-nowrap">
                                                     {venue}
                                                 </p>
                                             )}
@@ -288,14 +291,14 @@ export default function PublicationsList({ config, publications, detailsContent,
                                                 : "lg:col-auto lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:pt-0 lg:text-center lg:dark:border-neutral-800"
                                         )}>
                                             {!embedded && (
-                                                <p className="mb-3 whitespace-nowrap font-serif text-lg font-bold leading-relaxed text-accent">
+                                                <p className="mb-3 whitespace-nowrap font-serif text-lg font-bold leading-relaxed text-[#a66f68]">
                                                     {venue}
                                                 </p>
                                             )}
                                             <div className={cn(
                                                 "flex gap-2",
                                                 embedded
-                                                    ? "flex-wrap justify-center gap-1.5 lg:w-24 lg:flex-col lg:flex-nowrap"
+                                                    ? "flex-wrap justify-center gap-1.5 lg:w-[5.5rem] lg:flex-col lg:flex-nowrap"
                                                     : "flex-wrap justify-center lg:flex-nowrap"
                                             )}>
                                         {pub.doi && (
@@ -412,10 +415,10 @@ export default function PublicationsList({ config, publications, detailsContent,
                             h2: ({ children }) => <h2 className="mt-8 mb-4 border-b border-neutral-200 pb-2 font-serif text-2xl font-bold text-primary dark:border-neutral-800">{children}</h2>,
                             h3: ({ children }) => <h3 className="mt-6 mb-3 text-xl font-semibold text-primary">{children}</h3>,
                             p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
-                            ul: ({ children }) => <ul className="mb-4 list-disc space-y-3 pl-5 marker:text-[0.85em]">{children}</ul>,
+                            ul: ({ children }) => <ul className="content-list mb-4 space-y-3">{children}</ul>,
                             ol: ({ children }) => <ol className="mb-4 list-decimal space-y-3 pl-5">{children}</ol>,
                             li: ({ children }) => (
-                                <li className="pl-1 [&>p>strong:first-child]:font-serif [&>p>strong:first-child]:text-lg [&>p>strong:first-child]:font-bold [&>p>strong:first-child]:leading-tight">
+                                <li className="[&>p>strong:first-child]:font-serif [&>p>strong:first-child]:text-lg [&>p>strong:first-child]:font-bold [&>p>strong:first-child]:leading-tight">
                                     {children}
                                 </li>
                             ),

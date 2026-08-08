@@ -2,6 +2,8 @@ export interface LocaleMessages {
   common: {
     all: string;
     copyToClipboard: string;
+    copy: string;
+    copied: string;
   };
   navigation: {
     openMainMenu: string;
@@ -52,6 +54,8 @@ const en: LocaleMessages = {
   common: {
     all: 'All',
     copyToClipboard: 'Copy to clipboard',
+    copy: 'Copy',
+    copied: 'Copied',
   },
   navigation: {
     openMainMenu: 'Open main menu',
@@ -102,6 +106,8 @@ const zh: LocaleMessages = {
   common: {
     all: '全部',
     copyToClipboard: '复制到剪贴板',
+    copy: '复制',
+    copied: '已复制',
   },
   navigation: {
     openMainMenu: '打开主菜单',

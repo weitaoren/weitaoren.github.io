@@ -193,6 +193,86 @@ body {
   text-wrap: pretty;
 }
 
+/* Keep academic list markers consistent across profile and publication sections. */
+.content-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content-list > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.content-list > li::before {
+  content: '';
+  position: absolute;
+  top: 0.78em;
+  left: 0;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+.content-bullet {
+  display: block;
+  width: 0.25rem;
+  height: 0.25rem;
+  margin-top: 0.7em;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+/* Editorial section markers: restrained enough for an academic homepage. */
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.research-heading-row {
+  align-items: flex-end;
+}
+
+.research-heading-row > p {
+  transform: translateY(-0.18rem);
+}
+
+.section-heading-block {
+  display: block;
+}
+
+.section-heading-rule {
+  position: relative;
+  display: block;
+  height: 0.76rem;
+  margin-top: 0.42rem;
+}
+
+.section-heading-rule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6.2rem;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+.section-heading-rule::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 4.8rem;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.76;
+}
+
 /* Glass morphism utilities */
 .glass {
   background: var(--glass-bg);

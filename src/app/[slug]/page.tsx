@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getPageConfig, getMarkdownContent, getBibtexContent } from '@/lib/content';
 import { getConfig } from '@/lib/config';
 import { parseBibTeX } from '@/lib/bibtexParser';
@@ -86,6 +86,10 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
 
   const baseConfig = getConfig();
+  if (baseConfig.features.enable_one_page_mode) {
+    redirect(`/#${slug}`);
+  }
+
   const runtimeI18n = getRuntimeI18nConfig(baseConfig.i18n);
   const targetLocales = runtimeI18n.enabled ? runtimeI18n.locales : [runtimeI18n.defaultLocale];
 

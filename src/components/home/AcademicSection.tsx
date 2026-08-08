@@ -65,9 +65,9 @@ export default function AcademicSection({ title, entries }: AcademicSectionProps
             </div>
 
             <div className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-2">
-              <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+              <span aria-hidden="true" className="content-bullet" />
               <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-                <div className="min-w-0 leading-relaxed">
+                <div className="min-w-0 text-base leading-relaxed">
                   <InlineMarkdown>{entry.secondary}</InlineMarkdown>
                 </div>
                 {entry.period && (
@@ -79,8 +79,8 @@ export default function AcademicSection({ title, entries }: AcademicSectionProps
             </div>
 
             {entry.note && (
-              <div className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-500 sm:text-base">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+              <div className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-2 text-base leading-relaxed text-neutral-600 dark:text-neutral-500">
+                <span aria-hidden="true" className="content-bullet" />
                 <div className="min-w-0">
                   <InlineMarkdown>{entry.note}</InlineMarkdown>
                 </div>

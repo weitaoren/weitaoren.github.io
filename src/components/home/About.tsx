@@ -21,13 +21,16 @@ export default function About({ content, title, divided = false }: AboutProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
         >
-            <h2
-                className={`text-3xl font-serif font-bold text-primary mb-4 ${
-                    divided ? 'border-b border-neutral-200 dark:border-neutral-800 pb-2' : ''
-                }`}
-            >
-                {resolvedTitle}
-            </h2>
+            {divided ? (
+                <h2 className="mb-4 border-b border-neutral-200 pb-2 font-serif text-2xl font-bold text-primary dark:border-neutral-800">
+                    {resolvedTitle}
+                </h2>
+            ) : (
+                <div className="section-heading-block mb-5">
+                    <h2 className="font-serif text-3xl font-bold text-primary">{resolvedTitle}</h2>
+                    <span aria-hidden="true" className="section-heading-rule" />
+                </div>
+            )}
             <div className="text-[1.0625rem] text-neutral-700 dark:text-neutral-600 leading-relaxed">
                 <ReactMarkdown
                     components={{
@@ -35,9 +38,9 @@ export default function About({ content, title, divided = false }: AboutProps) {
                         h2: ({ children }) => <h2 className="text-2xl font-serif font-bold text-primary mt-8 mb-4 border-b border-neutral-200 dark:border-neutral-800 pb-2">{children}</h2>,
                         h3: ({ children }) => <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{children}</h3>,
                         p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
-                        ul: ({ children }) => <ul className="list-disc pl-5 mb-4 space-y-3">{children}</ul>,
+                        ul: ({ children }) => <ul className="content-list mb-4 space-y-3">{children}</ul>,
                         ol: ({ children }) => <ol className="list-decimal pl-5 mb-4 space-y-3">{children}</ol>,
-                        li: ({ children }) => <li className="pl-1">{children}</li>,
+                        li: ({ children }) => <li>{children}</li>,
                         a: ({ href = '', children, ...props }) => {
                             const className = "text-primary font-semibold underline underline-offset-4 decoration-neutral-300 transition-colors duration-200 hover:decoration-primary";
 

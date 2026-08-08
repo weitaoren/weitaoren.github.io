@@ -34,7 +34,7 @@ export default function ExperiencePage({ config, embedded = false }: ExperienceP
                 key={`${award.title}-${award.period || ''}`}
                 className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-2"
               >
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                <span aria-hidden="true" className="content-bullet" />
                 <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                   <div className="min-w-0 leading-relaxed">
                     <strong className="font-semibold text-primary">{award.title}</strong>

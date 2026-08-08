@@ -10,7 +10,7 @@ import {
     MapPinIcon
 } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
-import { Github, Linkedin } from 'lucide-react';
+import { Check, Copy, Github, Linkedin } from 'lucide-react';
 import type { SiteConfig } from '@/lib/config';
 import { useMessages } from '@/lib/i18n/useMessages';
 
@@ -40,6 +40,7 @@ export default function Profile({ author, social, features, researchInterests }:
     const [showThanks, setShowThanks] = useState(false);
     const [showAddress, setShowAddress] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
+    const [emailCopied, setEmailCopied] = useState(false);
 
     // Check local storage for user's like status
     useEffect(() => {
@@ -62,6 +63,18 @@ export default function Profile({ author, social, features, researchInterests }:
         } else {
             localStorage.removeItem('jiale-website-user-liked');
             setShowThanks(false);
+        }
+    };
+
+    const handleCopyEmail = async () => {
+        if (!social.email || !navigator.clipboard) return;
+
+        try {
+            await navigator.clipboard.writeText(social.email);
+            setEmailCopied(true);
+            window.setTimeout(() => setEmailCopied(false), 1600);
+        } catch {
+            setEmailCopied(false);
         }
     };
 
@@ -169,19 +182,19 @@ export default function Profile({ author, social, features, researchInterests }:
                                             initial={{ opacity: 0, y: 10, scale: 0.8 }}
                                             animate={{ opacity: 1, y: -10, scale: 1 }}
                                             exit={{ opacity: 0, y: -20, scale: 0.8 }}
-                                            className="absolute z-20 top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm font-medium shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap"
+                                            className="absolute z-20 top-0 left-1/2 flex -translate-x-1/2 -translate-y-full transform items-center justify-center rounded-lg bg-neutral-800 px-4 py-2 text-sm font-medium leading-5 text-white shadow-lg max-w-[calc(100vw-2rem)] sm:max-w-none sm:whitespace-nowrap"
                                             onMouseEnter={() => setShowAddress(true)}
                                             onMouseLeave={() => setShowAddress(false)}
                                         >
-                                            <div className="text-center">
+                                            <div className="w-full text-center">
                                                 {social.location_details?.map((line, i) => (
                                                     <p key={i} className="break-words">{line}</p>
                                                 ))}
                                                 {(!social.location_details || social.location_details.length === 0) && social.location && (
                                                     <p className="break-words">{social.location}</p>
                                                 )}
-                                                <div className="mt-2 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 justify-center">
-                                                    {social.location_url && (
+                                                {social.location_url && (
+                                                    <div className="mt-2 flex flex-col justify-center space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
                                                         <a
                                                             href={social.location_url}
                                                             target="_blank"
@@ -191,8 +204,8 @@ export default function Profile({ author, social, features, researchInterests }:
                                                             <MapPinIcon className="h-4 w-4" />
                                                             <span>{messages.profile.googleMap}</span>
                                                         </a>
-                                                    )}
-                                                </div>
+                                                    </div>
+                                                )}
 
                                             </div>
                                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-800"></div>
@@ -236,14 +249,22 @@ export default function Profile({ author, social, features, researchInterests }:
                                         >
                                             <div className="text-center">
                                                 <p className="break-words">{social.email}</p>
-                                                <div className="mt-2">
+                                                <div className="mt-2 flex items-center justify-center gap-2">
+                                                    <button
+                                                        type="button"
+                                                        onClick={handleCopyEmail}
+                                                        aria-label={emailCopied ? messages.common.copied : messages.common.copy}
+      className="inline-flex w-[4.25rem] flex-none items-center justify-center gap-1.5 rounded-md bg-accent px-1.5 py-1 text-xs font-medium text-white transition-colors duration-200 hover:bg-accent-dark"
+                                                    >
+                                                        {emailCopied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                                                        <span>{emailCopied ? messages.common.copied : messages.common.copy}</span>
+                                                    </button>
                                                     <a
                                                         href={link.href}
-                                                        className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-3 py-1 rounded-md text-xs font-medium transition-colors duration-200 w-full sm:w-auto"
+      className="inline-flex w-[4.25rem] flex-none items-center justify-center gap-1.5 rounded-md bg-accent px-1.5 py-1 text-xs font-medium text-white transition-colors duration-200 hover:bg-accent-dark"
                                                     >
-                                                        <EnvelopeIcon className="h-4 w-4" />
-                                                        <span className="sm:hidden">{messages.profile.send}</span>
-                                                        <span className="hidden sm:inline">{messages.profile.sendEmail}</span>
+                                                        <EnvelopeIcon className="h-3.5 w-3.5" />
+                                                        <span>{messages.profile.send}</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -279,7 +300,7 @@ export default function Profile({ author, social, features, researchInterests }:
                 </div>
                 <div className="mx-auto mb-6 max-w-full px-1 pt-3">
                     <h3 className="mb-3 font-serif text-xl font-bold text-primary">{messages.profile.researchInterests}</h3>
-                    <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-700 dark:text-neutral-500">
+                    <ul className="content-list space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-500">
                         {researchInterests.map((interest, index) => (
                             <li key={index} className="whitespace-nowrap">{interest}</li>
                         ))}
