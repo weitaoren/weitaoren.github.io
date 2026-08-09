@@ -41,6 +41,7 @@ export default function Profile({ author, social, features, researchInterests }:
     const [showAddress, setShowAddress] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
     const [emailCopied, setEmailCopied] = useState(false);
+    const [activeSocialTooltip, setActiveSocialTooltip] = useState<string | null>(null);
 
     // Check local storage for user's like status
     useEffect(() => {
@@ -151,20 +152,22 @@ export default function Profile({ author, social, features, researchInterests }:
             </div>
 
             {/* Contact Links */}
-            <div className="relative mb-4 flex flex-wrap justify-center gap-3 px-2 sm:gap-4">
+            <div className="relative mx-auto mb-4 grid w-full max-w-[12rem] grid-cols-4 items-center">
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     if (link.isLocation) {
                         return (
-                            <div key={link.name} className="relative">
+                            <div key={link.name} className="relative justify-self-center">
                                 <button
                                     onMouseEnter={() => {
                                         setShowEmail(false);
+                                        setActiveSocialTooltip(null);
                                         setShowAddress(true);
                                     }}
                                     onMouseLeave={() => setShowAddress(false)}
                                     onClick={() => {
                                         setShowEmail(false);
+                                        setActiveSocialTooltip(null);
                                         setShowAddress((visible) => !visible);
                                     }}
                                     type="button"
@@ -217,15 +220,17 @@ export default function Profile({ author, social, features, researchInterests }:
                     }
                     if (link.isEmail) {
                         return (
-                            <div key={link.name} className="relative">
+                            <div key={link.name} className="relative justify-self-center">
                                 <button
                                     onMouseEnter={() => {
                                         setShowAddress(false);
+                                        setActiveSocialTooltip(null);
                                         setShowEmail(true);
                                     }}
                                     onMouseLeave={() => setShowEmail(false)}
                                     onClick={() => {
                                         setShowAddress(false);
+                                        setActiveSocialTooltip(null);
                                         setShowEmail((visible) => !visible);
                                     }}
                                     type="button"
@@ -276,16 +281,42 @@ export default function Profile({ author, social, features, researchInterests }:
                         );
                     }
                     return (
-                        <a
+                        <div
                             key={link.name}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
-                            aria-label={link.name}
+                            className="relative justify-self-center"
+                            onMouseEnter={() => {
+                                setShowAddress(false);
+                                setShowEmail(false);
+                                setActiveSocialTooltip(link.name);
+                            }}
+                            onMouseLeave={() => setActiveSocialTooltip(null)}
                         >
-                            <IconComponent className="h-5 w-5" />
-                        </a>
+                            <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex h-9 w-9 items-center justify-center p-2 text-neutral-600 transition-colors duration-200 hover:text-accent focus-visible:text-accent dark:text-neutral-400"
+                                aria-label={link.name}
+                                onFocus={() => setActiveSocialTooltip(link.name)}
+                                onBlur={() => setActiveSocialTooltip(null)}
+                            >
+                                <IconComponent className="h-5 w-5" />
+                            </a>
+
+                            <AnimatePresence>
+                                {activeSocialTooltip === link.name && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                                        animate={{ opacity: 1, y: -10, scale: 1 }}
+                                        exit={{ opacity: 0, y: -20, scale: 0.8 }}
+                                        className="absolute z-20 top-0 left-1/2 flex -translate-x-1/2 -translate-y-full transform items-center justify-center rounded-lg bg-neutral-800 px-4 py-2 text-sm font-medium leading-5 text-white shadow-lg whitespace-nowrap"
+                                    >
+                                        {link.name}
+                                        <div className="absolute top-full left-1/2 h-0 w-0 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-800" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
                     );
                 })}
             </div>
