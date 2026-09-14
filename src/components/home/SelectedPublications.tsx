@@ -57,6 +57,13 @@ export default function SelectedPublications({ publications, title, enableOnePag
                                 </h3>
                                 <p className="mb-1 font-serif text-base font-semibold leading-relaxed text-primary dark:text-neutral-100">
                                     {pub.journal || pub.conference}
+                                    {pub.volume && pub.volume !== '0' && (
+                                        <>
+                                            {`, ${pub.volume}`}
+                                            {pub.issue && pub.issue !== '0' && `(${pub.issue})`}
+                                            {pub.pages && `: ${pub.pages.replace(/--?/g, '–')}`}
+                                        </>
+                                    )}
                                 </p>
                                 <p className="text-sm text-primary dark:text-neutral-200">
                                     {pub.authors.map((author, idx) => (

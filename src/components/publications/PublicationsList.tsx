@@ -217,7 +217,12 @@ export default function PublicationsList({ config, publications, detailsContent,
                     </div>
                 ) : (
                     filteredPublications.map((pub, index) => {
-                        const venue = pub.journal || pub.conference;
+                        const venue = [
+                            pub.journal || pub.conference,
+                            pub.volume && pub.volume !== '0'
+                                ? `${pub.volume}${pub.issue && pub.issue !== '0' ? `(${pub.issue})` : ''}${pub.pages ? `: ${pub.pages.replace(/--?/g, '–')}` : ''}`
+                                : undefined,
+                        ].filter(Boolean).join(', ');
 
                         return (
                         <motion.div
@@ -265,7 +270,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                                 <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
                                             </h3>
                                             {embedded && (
-                                                <p className="mb-0.5 font-serif text-base font-semibold leading-relaxed text-[#a66f68] xl:whitespace-nowrap">
+                                                <p className="mb-0.5 font-serif text-base font-semibold leading-relaxed text-[#a66f68]">
                                                     {venue}
                                                 </p>
                                             )}
@@ -291,7 +296,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                                 : "lg:col-auto lg:items-center lg:border-l lg:border-neutral-200 lg:pl-6 lg:pt-0 lg:text-center lg:dark:border-neutral-800"
                                         )}>
                                             {!embedded && (
-                                                <p className="mb-3 whitespace-nowrap font-serif text-lg font-bold leading-relaxed text-[#a66f68]">
+                                                <p className="mb-3 font-serif text-lg font-bold leading-relaxed text-[#a66f68]">
                                                     {venue}
                                                 </p>
                                             )}
