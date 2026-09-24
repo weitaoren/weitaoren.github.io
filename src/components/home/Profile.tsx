@@ -122,13 +122,13 @@ export default function Profile({ author, social, features, researchInterests }:
             className="lg:sticky lg:top-24 lg:-my-8 lg:border-r lg:border-neutral-200 lg:bg-[#f7f7f4] lg:px-3 lg:py-8"
         >
             {/* Profile Image */}
-            <div className="mx-auto mb-5 h-52 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl">
+            <div className="mx-auto mb-5 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl">
                 <Image
                     src={author.avatar}
                     alt={author.name}
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover object-center"
+                    width={375}
+                    height={500}
+                    className="block h-auto w-full"
                     priority
                 />
             </div>
