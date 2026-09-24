@@ -119,10 +119,10 @@ export default function Profile({ author, social, features, researchInterests }:
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-24 lg:-my-8 lg:border-r lg:border-neutral-200 lg:bg-[#f7f7f4] lg:px-3 lg:py-8"
+            className="lg:border-r lg:border-neutral-200 lg:bg-[#f7f7f4] lg:px-3 lg:py-8"
         >
             {/* Profile Image */}
-            <div className="mx-auto mb-5 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl">
+            <div className="mx-auto mb-5 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl lg:w-40">
                 <Image
                     src={author.avatar}
                     alt={author.name}
