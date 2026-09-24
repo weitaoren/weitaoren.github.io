@@ -122,7 +122,7 @@ export default function Profile({ author, social, features, researchInterests }:
             className="lg:border-r lg:border-neutral-200 lg:bg-[#f7f7f4] lg:px-3 lg:py-8"
         >
             {/* Profile Image */}
-            <div className="mx-auto mb-5 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl lg:w-40">
+            <div className="mx-auto mb-5 w-52 overflow-hidden rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl lg:w-44">
                 <Image
                     src={author.avatar}
                     alt={author.name}
@@ -144,11 +144,6 @@ export default function Profile({ author, social, features, researchInterests }:
                 <p className="text-neutral-600 mb-2 whitespace-pre-line leading-relaxed">
                     {author.institution}
                 </p>
-                {author.quote && (
-                    <p className="font-serif text-sm italic text-neutral-500">
-                        {author.quote}
-                    </p>
-                )}
             </div>
 
             {/* Contact Links */}

@@ -16,6 +16,7 @@ import type { I18nRuntimeConfig } from '@/types/i18n';
 interface NavigationProps {
   items: SiteConfig['navigation'];
   siteTitle: string;
+  quote?: string;
   enableOnePageMode?: boolean;
   i18n: I18nRuntimeConfig;
   itemsByLocale?: Record<string, SiteConfig['navigation']>;
@@ -25,6 +26,7 @@ interface NavigationProps {
 export default function Navigation({
   items,
   siteTitle,
+  quote,
   enableOnePageMode,
   i18n,
   itemsByLocale,
@@ -188,6 +190,11 @@ export default function Navigation({
 
                 <div className="hidden lg:block">
                   <div className="ml-10 flex items-center space-x-3">
+                    {quote && (
+                      <span className="whitespace-nowrap font-serif text-sm italic text-neutral-500">
+                        {quote}
+                      </span>
+                    )}
                     <div
                       ref={navContainerRef}
                       className="relative flex items-baseline space-x-1"
@@ -276,6 +283,11 @@ export default function Navigation({
                   className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-neutral-200/50 shadow-lg"
                 >
                   <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    {quote && (
+                      <p className="px-3 pb-2 font-serif text-sm italic text-neutral-500">
+                        {quote}
+                      </p>
+                    )}
                     {effectiveItems.map((item, index) => {
                       const isActive = enableOnePageMode
                         ? (item.href === '/' ? pathname === '/' && !activeHash : activeHash === `#${item.target}`)

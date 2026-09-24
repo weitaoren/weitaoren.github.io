@@ -152,6 +152,7 @@ export default function RootLayout({
           <Navigation
             items={config.navigation}
             siteTitle={config.site.title}
+            quote={config.author.quote}
             enableOnePageMode={config.features.enable_one_page_mode}
             i18n={runtimeI18n}
             itemsByLocale={navigationByLocale}
