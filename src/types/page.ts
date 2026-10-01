@@ -35,6 +35,7 @@ export interface AwardEntry {
 export interface ExperiencePageConfig extends BasePageConfig {
     type: 'experience';
     internships: AcademicEntry[];
+    internships_title?: string;
     awards: AwardEntry[];
 }
 

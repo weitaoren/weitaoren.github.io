@@ -17,14 +17,19 @@ export default function ExperiencePage({ config, embedded = false }: ExperienceP
       transition={{ duration: 0.6, delay: 0.4 }}
       className={embedded ? '' : 'max-w-4xl mx-auto'}
     >
-      <h1 className={`${embedded ? 'text-2xl' : 'text-4xl'} font-serif font-bold text-primary mb-8`}>
-        {config.title}
-      </h1>
+      {embedded ? (
+        <div className="section-heading-block mb-5">
+          <h1 className="text-3xl font-serif font-bold leading-none text-primary">{config.title}</h1>
+          <span aria-hidden="true" className="section-heading-rule" />
+        </div>
+      ) : (
+        <h1 className="text-4xl font-serif font-bold text-primary mb-8">{config.title}</h1>
+      )}
 
       <div className="space-y-10">
-        <AcademicSection title="Industry Internships" entries={config.internships} />
+        <AcademicSection title={config.internships_title ?? 'Industry Internships'} entries={config.internships} />
 
-        <section>
+        {config.awards.length > 0 && <section>
           <h2 className="mb-4 border-b border-neutral-200 pb-2 font-serif text-2xl font-bold text-primary dark:border-neutral-800">
             Awards
           </h2>
@@ -49,7 +54,7 @@ export default function ExperiencePage({ config, embedded = false }: ExperienceP
               </div>
             ))}
           </div>
-        </section>
+        </section>}
       </div>
     </motion.div>
   );
