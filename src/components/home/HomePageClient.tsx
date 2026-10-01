@@ -74,9 +74,9 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
             <section
               key={page.id}
               id={page.id}
-              className={`space-y-8 ${page.id === 'research' ? 'relative scroll-mt-4 pt-16 lg:pt-24' : 'scroll-mt-24'}`}
+              className={`space-y-8 ${(page.id === 'research' || page.id === 'industry') ? 'relative scroll-mt-4 pt-16 lg:pt-24' : 'scroll-mt-24'}`}
             >
-              {page.id === 'research' && (
+              {(page.id === 'research' || page.id === 'industry') && (
                 <div
                   aria-hidden="true"
                   className="absolute inset-x-0 top-4 flex items-center lg:top-8"
