@@ -4,19 +4,19 @@ internships_title = ""
 awards = []
 
 [[internships]]
-primary = "**Tencent Research Institute**"
+primary = "**Tencent**, *Research Institute*"
 location = "Beijing, China"
-secondary = "**Research Intern**"
+secondary = "Research Intern"
 period = "Aug 2025–Oct 2025"
 
 [[internships]]
-primary = "**ByteDance**"
+primary = "**ByteDance**, *E-commerce Department*"
 location = "Shanghai, China"
-secondary = "**Business Analytics Intern**"
+secondary = "Business Analytics Intern"
 period = "Jun 2025–Jul 2025"
 
 [[internships]]
-primary = "**Ant Group Research Institute**"
+primary = "**Ant Group**, *Research Institute*"
 location = "Shanghai, China"
-secondary = "**Data & Modeling Intern**"
+secondary = "Data & Modeling Intern"
 period = "Apr 2024–Jun 2024"
