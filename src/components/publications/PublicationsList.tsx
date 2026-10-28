@@ -287,6 +287,11 @@ export default function PublicationsList({ config, publications, detailsContent,
                                                     </span>
                                                 ))}
                                             </p>
+                                            {pub.description && (
+                                                <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                                                    {pub.description}
+                                                </p>
+                                            )}
                                         </div>
 
                                         <div className={cn(

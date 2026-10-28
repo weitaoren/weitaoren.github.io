@@ -1,8 +1,5 @@
 ## Working Papers
 
-- **Optimal Return Policies with Heterogeneous Search Rewards**  
-  Fangruo Chen, **Weitao Ren**\*, Wenqiang Xiao
-
 - **Risk Sharing through Seller-Provided Return Shipping Insurance: Implications of Consumer Search**  
   **Weitao Ren**, Chuanshuai Ru\*, Lian Qi, Fangruo Chen
 
