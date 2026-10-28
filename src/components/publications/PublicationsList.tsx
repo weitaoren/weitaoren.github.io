@@ -263,7 +263,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                         </p>
                                         <div className="min-w-0 lg:flex lg:min-h-20 lg:flex-col lg:items-start lg:justify-center lg:pl-1 lg:pr-3 lg:text-left">
                                             <h3 className={cn(
-                                                "font-serif text-lg font-bold leading-tight text-primary",
+                                                "text-balance font-serif text-lg font-bold leading-tight text-primary",
                                                 embedded ? "mb-1" : "mb-2",
                                                 !embedded && "lg:whitespace-nowrap"
                                             )}>
