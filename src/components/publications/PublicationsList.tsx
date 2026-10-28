@@ -17,7 +17,7 @@ import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
 import { cn } from '@/lib/utils';
 import { useMessages } from '@/lib/i18n/useMessages';
-import FormattedBibTeXText from './FormattedBibTeXText';
+import PublicationTitle from './PublicationTitle';
 
 interface PublicationsListProps {
     config: PublicationPageConfig;
@@ -262,13 +262,7 @@ export default function PublicationsList({ config, publications, detailsContent,
                                             )}
                                         </p>
                                         <div className="min-w-0 lg:flex lg:min-h-20 lg:flex-col lg:items-start lg:justify-center lg:pl-1 lg:pr-3 lg:text-left">
-                                            <h3 className={cn(
-                                                "text-balance font-serif text-lg font-bold leading-tight text-primary",
-                                                embedded ? "mb-1" : "mb-2",
-                                                !embedded && "lg:whitespace-nowrap"
-                                            )}>
-                                                <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
-                                            </h3>
+                                            <PublicationTitle publication={pub} className={embedded ? "mb-1" : "mb-2"} />
                                             {embedded && (
                                                 <p className="mb-0.5 font-serif text-base font-semibold leading-relaxed text-[#a66f68]">
                                                     {venue}
