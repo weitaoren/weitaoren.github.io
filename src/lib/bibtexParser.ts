@@ -48,7 +48,7 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
 
     // Parse year and month
     const year = parseInt(tags.year) || new Date().getFullYear();
-    const monthStr = tags.month?.toLowerCase() || '';
+    const monthStr = (tags.display_month || tags.month)?.toLowerCase() || '';
     const month = monthMapping[monthStr] || (parseInt(monthStr) || undefined);
 
     // Determine type
@@ -71,7 +71,7 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       titleNodes: title.nodes,
       authors,
       year,
-      month: monthMapping[tags.month?.toLowerCase()] ? String(month) : tags.month,
+      month: month ? String(month) : undefined,
       type,
       status: 'published',
       tags: keywords,
@@ -93,7 +93,7 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       preview,
 
       // Store original BibTeX (excluding custom fields)
-      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code', 'abstract']),
+      bibtex: reconstructBibTeX(entry, ['selected', 'display_month', 'preview', 'description', 'keywords', 'code', 'abstract']),
     };
 
     // Clean up undefined fields
